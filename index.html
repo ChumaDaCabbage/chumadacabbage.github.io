@@ -1,11 +1,20 @@
+<!--__________________________________________________________________________________________________________-->
+<!--______________________________________________PROJECTS PAGE_______________________________________________-->
+<!--__________________________________________________________________________________________________________-->
 <!DOCTYPE html>
 <html> 
   <!-- ---------------------------------------------------------------------------- -->
   <!-- ------------------------------------Head------------------------------------ -->
   <!-- ---------------------------------------------------------------------------- -->
   <head>
-    <!-- Link to the external stylesheet -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Link to the external stylesheets -->
+    <link rel="stylesheet" type="text/css" href="projectsStyles.css">
+    <link rel="stylesheet" type="text/css" href="headerStyles.css">
+    <link rel="stylesheet" type="text/css" href="footerStyles.css">
+    <link rel="stylesheet" type="text/css" href="fonts.css">
+    
+    <!-- Connect javascript functions -->
+    <script type="text/javascript" src="functions.js"></script>
   </head>
 
   <!-- ---------------------------------------------------------------------------- -->
@@ -13,26 +22,56 @@
   <!-- ---------------------------------------------------------------------------- -->
 
   <body>
-    <!-- ~~~~~~~~~~~Video~~~~~~~~~~~ -->
-    <video autoplay muted loop>
-      <source src="media/SpaceMarineVRHighlightsVideo.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-
     <!-- ~~~~~~~~~~~Header~~~~~~~~~~~ -->
     <div class = "header">
-      <div class = "title">Evan Gray</div>
+      <div class = "title">
+        Evan Gray       
+      </div>
       <div class = "buttons">
-        <button class = "button" onclick = "window.location.href = 'resume.html'">Resume</button>
-        <button class= " button" onclick = "window.location.href = 'code_samples.html'">Code Samples</button>
+        <button class= " button" onclick = "window.location.href = 'index.html'">Projects</button>
+        <button class= " button" onclick = "window.location.href = 'Resume.html'">Resume</button>
+        <button class= " button" onclick = "window.location.href = 'CodeSamples.html'">Code Samples</button>
+        <button class= " button" onclick = "window.location.href = 'About.html'">About</button>
+        <button class= " button" onclick = "scrollToFooter()">Contact</button>
+      </div>
+    </div>
+
+    <!-- ~~~~~~~~~~~Video~~~~~~~~~~~ -->
+    <div class = "videoContainer">
+      <div class = "video">
+        <video autoplay muted loop>
+          <source src="media/WebsiteKnightlightShowcase.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      <div class = "videoCover">
+      </div>
+
+      <div class = "videoImage">
+        <button class="imageButton" onclick = "window.location.href = 'KnightLight.html'"> <img src="media/KnightLightLogo.png" alt="KnightLight Game Logo" /> </button>
+      </div>
+
+      <div class = "videoText">
+        <button class="imageButton" onclick = "window.location.href = 'KnightLight.html'"> 2D Puzzle Platformer <br> Click Here to Learn More </button>
       </div>
     </div>
 
     <!-- ~~~~~~~~~~~Content~~~~~~~~~~~ -->
-    <div class="content">
-      <h2>Welcome to My Website</h2>
-      <p>This is an example of a webpage with a fixed header and scrollable content.</p>
-      <p>Scroll down to see more content.</p>
+    <div class = "content">
+
+    </div>
+
+    <!-- ~~~~~~~~~~~Footer~~~~~~~~~~~~ -->
+    <hr class="footerLine" style = "width: 100%; margin: 0 auto;">
+
+    <div class = "footer">
+      <div class = "text">
+        <p>evanpgray.work@gmail.com</p>
+      </div>
+      <div class = "links">
+        <a href="https://www.linkedin.com/in/evanpatrickgray" target="_blank" rel="noopener noreferrer"> <img src="media/LinkedInLogo.png" alt="LinkedIn Logo" /> </a>
+        <!-- <a href="https://thecabbageknight.itch.io/" target="_blank" rel="noopener noreferrer"> <img src="media/ItchLogo.png" alt="Itch Logo" /> </a> -->
     </div>
   </body>
 
