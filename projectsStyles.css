@@ -1,0 +1,118 @@
+/* ------------------------------------------------------------------------------ */
+/* -------------------------------Projects Styles-------------------------------- */
+/* ------------------------------------------------------------------------------ */
+
+ /* Body */
+ body 
+ {
+  font-family: OPTIBaskerVille;
+  background-color: black;
+ }
+ body, html 
+ {
+   width: 100%;
+   height: 100%;
+
+   display: flex;
+   flex-direction: column;
+
+   margin: 0;
+   padding: 0;
+
+   overflow-x: hidden; /* Prevent horizontal scrolling */
+   overflow-y: scroll; /* Enable vertical scrolling */
+ }
+
+.content 
+{
+  height: 200px; /* For demonstration, making the page long enough to scroll */
+  margin-top: 80px; /* Give space for the fixed header */
+  padding: 20px;
+
+  flex-grow: 1;
+
+  color: white;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* ---------------------------------Video Styles--------------------------------- */
+/* ------------------------------------------------------------------------------ */
+
+ /* Video */
+ .videoContainer
+ {
+   position: relative; top: 0; left: 0;
+ }
+ .videoContainer .video 
+ {
+   position: relative; top: 0; left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover; /* Ensures the video fills the screen without distortion */
+   z-index: -2; /* Place the video behind other content */
+ }
+ .videoContainer video 
+ {
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover; /* Ensures the video fills the screen without distortion */
+   z-index: -2; /* Place the video behind other content */
+ }
+ .videoContainer .videoCover
+ {
+   position: absolute; top: 0; left: 0;
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover; 
+   z-index: -1; /* Place the video behind other content */
+
+   background-color: rgba(0, 0, 0, 0.5); /* Blue with 50% opacity */
+   color: black;
+ }
+ .videoContainer .videoImage img 
+ {
+  position: absolute; top: 13%; left: 32%;
+
+  height: 30%;
+
+  padding: 0;
+  margin: 0;
+  border: none;
+  align-items: center;
+  cursor: pointer;
+}
+
+.videoContainer .videoImage button 
+{
+ cursor: pointer;
+ border: none;
+ 
+ color: white;
+ background-color: transparent; /* Transparent background */
+}
+
+.videoContainer .videoText button
+{
+  cursor: pointer;
+  border: none;
+  background-color: transparent; /* Transparent background */
+  color: white;
+  font-family: WebsitePixel;
+
+  width: 100%;
+
+  position: absolute; top: 65%; left: 50%;
+  transform: translate(-50%, -50%); /* Centers the text horizontally and vertically */
+
+  text-align: center;
+  font-size: calc(1.5vw + 0.5vh);
+  line-height: 1.5;
+}
+
+.videoContainer .videoText button:hover 
+{
+  background-color: transparent; /* Transparent background */
+  opacity: 0.7;
+}
