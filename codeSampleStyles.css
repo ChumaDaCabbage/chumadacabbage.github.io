@@ -1,0 +1,56 @@
+/* ------------------------------------------------------------------------------ */
+/* --------------------------------Resume Styles-------------------------------- */
+/* ------------------------------------------------------------------------------ */
+
+ /* Body */
+ body 
+ {
+  font-family: OPTIBaskerVille;
+  background-color: black;
+ }
+ body, html 
+ {
+   width: 100%;
+   height: 100%;
+
+   display: flex;
+   flex-direction: column;
+
+   margin: 0;
+   padding: 0;
+
+   overflow-x: hidden; /* Prevent horizontal scrolling */
+   overflow-y: scroll; /* Enable vertical scrolling */
+ }
+
+.prettyprint
+{
+  height: 20000px;
+
+  padding: 0px;
+  margin-top: calc(3.75vw + 2.75vh); /* Give space for the fixed header */
+
+  flex-grow: 1;
+
+  color: white;
+
+  background-color: rgb(24, 24, 24);
+}
+
+/* Google Prettify syntax highlighting classes */
+.atn { color: #ffffff; }
+.atv { color: #ffffff; }
+.clo { color: #ffffff; }
+.com { color: #6a9955; } /* comment */
+.dec { color: #ffffff; }
+.fun { color: #ffffff; }
+.lit { color: #b5c078; } /* literal */
+.opn { color: #ffffff; }
+.pln { color: #8cdcfe; } /* plain text */
+.pun { color: #ffffff; } /* punctuation */
+.src { color: #ffffff; }
+.str { color: #ce834a; } /* string */
+.tag { color: #ffffff; }
+.typ { color: #44c9a4; } /* type */
+.kwd { color: #4a9ccb; } /* keyword */
+.var { color: #ffffff; }
