@@ -2,12 +2,9 @@ function scrollToFooter()
 {
   const footerElement = document.querySelector('.footer');
   footerElement.scrollIntoView({ behavior: 'smooth' });
-  highlightText()
-}
 
-function highlightText() 
-{
-  const textElements = document.querySelectorAll('.footer .contactInfo .text');
+  //Highlight the text elements in the footer
+  const textElements = document.querySelectorAll('.footer .contactInfo .item');
   
   textElements.forEach((textElement) => 
   {
