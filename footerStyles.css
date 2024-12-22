@@ -36,7 +36,24 @@
   }
   
   /* Footer Text */
-  .footer .text 
+  .footer .contactInfo 
   {
+    align-items: center;
+    display: flex;
     font-size: calc(1vw + 0.5vh);
+    word-spacing: 1px;
+    gap: 1vw;
   }
+
+  .footer .contactInfo .text
+  {
+    height: 10%;
+    transition: background-color 0.5s ease-out;
+  }
+
+  .highlight 
+  {
+    color: yellow; /* Change text color to highlight */
+    transition: color 10s ease-out;
+  }
+
