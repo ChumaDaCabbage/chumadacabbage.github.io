@@ -23,6 +23,10 @@
 
     <!-- Link to the google code-prettify library styles -->
     <script type="text/javascript" src="../googlePrettify/prettify.js"></script>
+
+    <!-- Load the code snippet on page load and run prettify on it-->
+    <script> window.onload = loadCode; </script>
+
   </head>
 
   <!-- ---------------------------------------------------------------------------- -->
@@ -50,173 +54,41 @@
 
     <hr style = "width: 100%; margin: 0 0; margin-top: calc(3.25vw + 2.25vh)">
     <div class = "codeTitle">
-      <h1>Code Sample 1 Title TEMP</h1>
+      <h1>Overlapping Rectangles</h1>
     </div>
-    <div class = "codeSnippet">
-      <pre class="prettyprint lang-cpp"> 
-       /************************************************************
-        * @file   overlap.cpp
-        * @author Evan Gray (evan.gray@digipen.edu)
-        * @date   11-13-2024
-        * 
-        * @brief: Calculates the number of overlaps in a set of 
-        *         rectangles
-       *************************************************************/
-       #include "overlap.h"
-       
-       #include &ltvector>        //std::vector
-       #include &ltfstream>       //std::ifstream
-       #include &ltunordered_map> //std::unordered_map
-       
-       int MOD = 7001; //For modulo counting
-       
-       /************************************************************
-        * @brief: Holds the data for a rectangle
-       *************************************************************/
-       struct Rect
-       {
-         unsigned x1,y1; //Top left corner
-         unsigned x2,y2; //Bottom right corner
-       };
-       
-       /************************************************************
-        * @brief: Holds the data for an event of a rect starting or ending
-       *************************************************************/
-       struct Event 
-       {
-         unsigned y;                           //Y value of the event
-         unsigned x1, x2;                      //X range of the event
-         enum Type {start = 1, end = -1} type; //Type of event
-       
-         //Less than for sorting
-         bool operator&lt(Event const& other) const {return y &lt other.y;}
-       };
-       
-       /************************************************************
-        * @brief: Holds the state of the sweep line
-        *         Handles current overlap counts at each x
-       *************************************************************/
-       struct LineData
-       {
-         std::vector&ltunsigned> mCurrentFieldOverlaps; //Holds the current overlaps at each x
-         std::unordered_map&ltunsigned, unsigned> mOverlapCounts; //Holds the number of each overlap count 
-                                                                //(ex: 10 overlaps of 0, 5 overlaps of 1, etc)
-       
-         /************************************************************
-          * @brief: Construct a new Line Data object
-          * 
-          * @param fieldWidth: Width of the field in use
-         *************************************************************/
-         LineData(int fieldWidth) 
-           : mCurrentFieldOverlaps(fieldWidth, 0) //Defualt all x's to 0 overlaps
-           , mOverlapCounts()
-         {
-           //Defualt entry for fieldWidth amout of 0's
-           mOverlapCounts.insert(std::pair&ltunsigned, unsigned>(0, fieldWidth));
-         }
-       };
-       
-       /************************************************************
-        * @brief: Solves the overlap problem using a sweep line algorithm
-       *************************************************************/
-       struct SweepLine
-       {
-         std::map&ltint,int> mOverlaps;            //Holds the number of overlaps of each count
-         std::multimap&ltunsigned, Event> mEvents; //Holds all events in order of y
-         LineData mLineData;                     //Holds the current overlap counts at each x
-         unsigned mFieldWidth;                   //Width of the field in use
-       
-         /************************************************************
-          * @brief: Construct a new Sweep Line object from a file
-          * 
-          * @param filename: File to read rects from
-         *************************************************************/
-         SweepLine(char const* filename) 
-           : mOverlaps()
-           , mEvents()
-           , mLineData(0)
-           , mFieldWidth()
-         {
-           //Open file
-           std::ifstream in(filename);
-           if (in.fail()) throw "Cannot open input file";
-       
-           //Read in header info
-           unsigned rectCount;
-           in >> mFieldWidth >> rectCount;
-       
-           //Read in rectangles and create events for them
-           for (unsigned r = 0; r &lt rectCount; ++r)
-           {
-             unsigned x1, y1, x2, y2;
-             in >> x1 >> y1 >> x2 >> y2;
-       
-             mEvents.insert(std::pair&ltint, Event>(y1, Event{y1, x1, x2, Event::start}));
-             mEvents.insert(std::pair&ltint, Event>(y2 + 1, Event{y2 + 1, x1, x2, Event::end}));
-           }
-       
-           //Set up lineData
-           mLineData = LineData(mFieldWidth);
-         }
-       
-         /************************************************************
-          * @brief: Processes all events in the event list while adjusting
-          *         the overlap counts
-         *************************************************************/
-         void Process() 
-         {
-           //Go through all events in order of y
-           unsigned lastY = mEvents.begin()->second.y;
-           for (const auto& eventpair : mEvents) 
-           {
-             const Event currentEvent = eventpair.second;  
-       
-             //If the y value has changed
-             if(currentEvent.y != lastY)
-             {
-               //Add current overlap counts to the totals for all y's between events and last event
-               for(auto const& overlapCount : mLineData.mOverlapCounts)
-               {
-                 mOverlaps[overlapCount.first] += overlapCount.second * (currentEvent.y - lastY);
-                 mOverlaps[overlapCount.first] %= MOD;
-               }
-             }
-             lastY = currentEvent.y;
-       
-             //For all x's in the event
-             for(unsigned j = currentEvent.x1; j &lt= currentEvent.x2; ++j)
-             {
-               //Decrement the overlap count for the value of this x
-               mLineData.mOverlapCounts[mLineData.mCurrentFieldOverlaps[j]]--;
-       
-               //Remove entry if no more overlaps of that count
-               if(mLineData.mOverlapCounts[mLineData.mCurrentFieldOverlaps[j]] == 0)
-               {
-                 mLineData.mOverlapCounts.erase(mLineData.mCurrentFieldOverlaps[j]);
-               }
-       
-               //Increment the overlap count for the new value of this x
-               mLineData.mOverlapCounts[mLineData.mCurrentFieldOverlaps[j] += currentEvent.type]++;
-             }
-           }
-         }
-       };
-       
-       /************************************************************
-        * @brief: Solves the overlap problem using a sweep line algorithm
-        * 
-        * @param filename: File to read rects from
-        * @return std::map&ltint,int>: Map of overlap counts
-       *************************************************************/
-       std::map&ltint,int> overlap( char const * filename ) 
-       {
-         SweepLine sl(filename);
-         sl.Process();
-         return sl.mOverlaps;
-       }
-      </pre>  
+    <div class = "codeSnippet" id="codeSnippet">
+      <div class = "codeLoadingZone" id="overlappSnippet">
+        <!-- Code snippet will get autoloaded here :D -->
+      </div>
       <div class = "codeDescription">
-        <p> This code snippet is a solution to a problem that calculates the number of overlaps in a set of rectangles. The solution uses a sweep line algorithm to process the events of the rectangles. The algorithm keeps track of the current overlap counts at each x value and adjusts them as the sweep line moves down the field. The algorithm then calculates the total number of overlaps of each count and returns the results. </p>
+<h2>Overview:</h2>
+<p>This code determines how many cells in a grid are covered by a specific number of overlapping rectangle, using a sweep line algorithm to avoid processing every cell individually. In given test cases the grid can be as large as 10^9*10^9, and contain up to 10^5 rectangles. The output is a map indicating how many cells are covered by exactly 𝐶 rectangles, modulo 7001.</p>
+
+
+<h2>Details:</h2>
+<p>1. Input Processing:</p>
+<div class="inset">
+<p>The code begins by reading rectangle data from a file. Each rectangle is defined by its top-left corner (<code>x₁, y₁</code>) and bottom-right corner (<code>x₂, y₂</code>). For each rectangle, two events are created:</p>
+<ul><li>A start event at <code>y₁</code>, for a rectangle covering the x-range [<code>x₁, x₂</code>].</li>
+<li>An end event at <code>y₂ + 1</code>, for a rectangle un-covering the x-range [<code>x₁, x₂</code>].</li></ul>
+<p>These events are stored in a multimap, which automatically sorts them by their y-coordinates. This ensures that the sweep line processes the events in the correct order, moving from top to bottom.</p>
+</div>
+<p>2. Sweep Line Algorithm:</p>
+<div class="inset">
+<p>The algorithm uses a "sweep line" to move down the grid and process events. It keeps track of overlap counts dynamically, avoiding the need to check every cell.</p>
+<p>Tracking Overlaps:</p>
+<div class="insetDeep"><p>A data structure called <code>LineData</code> keeps track of the number of overlaps at each x-coordinate using a vector. Additionally, it uses a hash map to count how many x-coordinates share the same overlap value (e.g., "10 x-coordinates have an overlap count of 1").</p></div>
+<p>Processing Events:</p>
+<div class="insetDeep"><ul><li>For a start event, the overlap count for all x-coordinates in the range [<code>x₁, x₂</code>] is incremented.</li>
+<li>For an end event, the overlap count for the same range is decremented.</li>
+<li>After adjusting overlap counts, the hash map is updated to reflect the new distribution of overlap counts.</li></ul></div> 
+<p>Calculating Area Contributions:</p>
+<div class="insetDeep"><p>Between events, the algorithm calculates the total area contributed by each overlap count. This is done by multiplying the number of x-coordinates with a specific overlap count by the vertical distance (difference in y-coordinates) between consecutive events. These contributions are added to the final result map, with all calculations performed modulo 7001 to prevent overflow.</p></div> 
+<p>Efficiency:</p>
+<div class="insetDeep"><p>The algorithm processes only the edges of rectangles (start and end events) and updates overlap counts directly, making it efficient even for large inputs.</p></div> 
+</div>
+<h3>3. Output:</h3>
+<div class="inset"><p>The final output is a map where the keys are overlap counts, and the values indicate the total area covered by those counts, modulo 7001. (e.g., 500 cells with 0 overlaps, 230 cells with 1 overlaps, ect.) This approach ensures the solution is scalable and avoids unnecessary computations.</p></div>
       </div>
     </div>
 

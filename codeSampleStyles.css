@@ -42,30 +42,13 @@
   flex-wrap: nowrap; /* Ensure content stays in a single row */
 }
 
-.codeTitle
-{
-  font-family: CascadiaMono;
-  margin-left: 1.7vw;
-  font-size: calc(0.75vw + 0.25vh);
-  color: white;
-}
-
-.codeDescription
-{
-  width: 50%;
-  font-family: CascadiaMono;
-  margin-left: 1vw;
-  margin-right: 1vw;
-  font-size: calc(0.75vw + 0.25vh);
-  color: white;
-}
-
-.prettyprint
+.codeSnippet .codeLoadingZone
 {
   height: auto; /* Adjust height dynamically based on content */
   width: 50%; /* Set width to 50% of the screen */
   padding: 1vw 1vh; /* Add padding inside the box */
-  margin-top: 0.1vh; /* Keep space for the fixed header */
+  margin-top: 0.1vh;
+  margin-bottom: 3vh;
   margin-left: 1.5vw;
 
   color: white; /* Text color */
@@ -75,7 +58,58 @@
   border-radius: 4px; /* Rounded corners */
   
   font-size:  calc(0.52vw + 0.22vh);;
-  overflow-x: auto; /* Allow horizontal scrolling for long lines of code *
+  overflow-x: auto; /* Allow horizontal scrolling for long lines of code */
+}
+
+.codeTitle
+{
+  font-family: CascadiaMono;
+  margin-left: 1.7vw;
+  margin-top: 1.0vh;
+  margin-bottom: 1.0vh;
+  font-size: calc(0.5vw + 0.15vh);
+  color: white;
+}
+
+.codeDescription
+{
+  width: 50%;
+  font-family: CascadiaMono;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: calc(0.75vw + 0.25vh);
+  color: white;
+  white-space: pre-wrap;
+}
+
+.codeDescription .inset
+{
+  margin-left: 1vw;
+}
+
+.codeDescription .inset .insetDeep
+{
+  margin-left: 2vw;
+}
+
+.codeDescription h3 
+{
+  margin: 0 0;
+}
+.codeDescription p 
+{
+  margin: 0 0;
+}
+.codeDescription ul 
+{
+  margin: 0 0;
+}
+.codeDescription code 
+{
+  margin: 0 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
 /* Google Prettify syntax highlighting classes */
