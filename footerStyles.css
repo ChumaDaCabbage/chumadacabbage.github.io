@@ -7,7 +7,7 @@
     position: relative; bottom: 0; left: 50%;
     transform: translateX(-50%); /* Centers the footer horizontally */
     width: 95%;
-    height: calc(2vw + 2vh);
+    height: calc(1.25vw + 1.25vh);
   
     display: flex;
     justify-content: space-between;
@@ -16,7 +16,7 @@
   
     padding: 1vw 10vw;
     color: white;
-    font-family: OPTIBaskerVille;
+    font-family: CascadiaMono;
   }
   
   /* Media Icon Links */
@@ -28,7 +28,7 @@
   .footer .links img 
   {
     cursor: pointer;
-    height: 2vw;
+    height: 1.75vw;
   }
   .footer .links img:hover 
   {
@@ -40,7 +40,7 @@
   {
     display: flex;
     flex-wrap: wrap;
-    font-size: calc(1vw + 0.5vh);
+    font-size: calc(0.75vw + 0.25vh);
   }
 
   .footer .contactInfo .item

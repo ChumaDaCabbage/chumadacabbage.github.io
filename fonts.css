@@ -2,8 +2,13 @@
 /* -------------------------------------Fonts------------------------------------ */
 /* ------------------------------------------------------------------------------ */
 
- @font-face 
- { 
-   font-family: OPTIBaskerVille; src: url('fonts/OPTIBaskerVille.woff'); 
-   font-family: WebsitePixel; src: url('fonts/websitepixelfont.woff'); 
- } 
+@font-face 
+{
+  font-family: 'CascadiaMono';
+  src: url('fonts/CascadiaMono.woff');
+}
+
+@font-face {
+  font-family: 'WebsitePixel';
+  src: url('fonts/websitepixelfont.woff');
+}

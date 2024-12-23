@@ -5,7 +5,6 @@
  /* Body */
  body 
  {
-  font-family: OPTIBaskerVille;
   background-color: black;
  }
  body, html 
@@ -20,15 +19,27 @@
    padding: 0;
 
    overflow-x: hidden; /* Prevent horizontal scrolling */
-   overflow-y: scroll; /* Enable vertical scrolling */
+   overflow-y: auto; /* Enable vertical scrolling */
  }
+
+ .sticky-block 
+ {
+  position: fixed; top: 0; left: 0;
+  width: 100%;
+  height: calc(3.25vw + 2.25vh);
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
 
 .prettyprint
 {
   height: 20000px;
 
   padding: 0px;
-  margin-top: calc(3.75vw + 2.75vh); /* Give space for the fixed header */
+  margin-top: calc(3.25vw + 2.25vh); /* Give space for the fixed header */
 
   flex-grow: 1;
 
