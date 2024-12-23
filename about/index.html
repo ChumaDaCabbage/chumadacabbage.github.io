@@ -1,5 +1,5 @@
 <!--__________________________________________________________________________________________________________-->
-<!--______________________________________________PROJECTS PAGE_______________________________________________-->
+<!--________________________________________________ABOUT PAGE________________________________________________-->
 <!--__________________________________________________________________________________________________________-->
 <!DOCTYPE html>
 <html> 
@@ -7,19 +7,19 @@
   <!-- ------------------------------------Head------------------------------------ -->
   <!-- ---------------------------------------------------------------------------- -->
   <head>
-    <title>Evan Gray | Projects</title>
+    <title>Evan Gray | About</title>
 
     <!-- Link to the external stylesheets -->
-    <link rel="stylesheet" type="text/css" href="projectsStyles.css">
-    <link rel="stylesheet" type="text/css" href="headerStyles.css">
-    <link rel="stylesheet" type="text/css" href="footerStyles.css">
-    <link rel="stylesheet" type="text/css" href="fonts.css">
-    
+    <link rel="stylesheet" type="text/css" href="../aboutStyles.css">
+    <link rel="stylesheet" type="text/css" href="../headerStyles.css">
+    <link rel="stylesheet" type="text/css" href="../footerStyles.css">
+    <link rel="stylesheet" type="text/css" href="../fonts.css">
+
     <!-- Set icon -->
     <link rel="icon" type="image/x-icon" href="../media/favicon.ico">
 
     <!-- Connect javascript functions -->
-    <script type="text/javascript" src="functions.js"></script>
+    <script type="text/javascript" src="../functions.js"></script>
   </head>
 
   <!-- ---------------------------------------------------------------------------- -->
@@ -28,41 +28,24 @@
 
   <body>
     <!-- ~~~~~~~~~~~Header~~~~~~~~~~~ -->
+    <div class="sticky-block">
+    </div>
     <div class = "header">
       <div class = "title">
         Evan Gray       
       </div>
       <div class = "buttons">
-        <button class= " button" onclick = "location.reload()">Projects</button>
-        <button class= " button" onclick = "window.location.href = 'resume/'">Resume</button>
-        <button class= " button" onclick = "window.location.href = 'codesamples/'">Code Samples</button>
-        <button class= " button" onclick = "window.location.href = '../about/'">About</button>
+        <button class= " button" onclick = "window.location.href = '../'">Projects</button>
+        <button class= " button" onclick = "window.location.href = '../resume/'">Resume</button>
+        <button class= " button" onclick = "window.location.href = '../codesamples/'">Code Samples</button>
+        <button class= " button" onclick = "location.reload()">About</button>
         <button class= " button" onclick = "scrollToFooter()">Contact</button>
       </div>
     </div>
 
-    <!-- ~~~~~~~~~~~Video~~~~~~~~~~~ -->
-    <div class = "videoContainer">
-      <div class = "video">
-        <video autoplay muted loop>
-          <source src="media/WebsiteKnightlightShowcase.mp4" type="video/mp4" />
-        </video>
-      </div>
-      
-      <div class = "videoCover">
-      </div>
+    <!-- ~~~~~~~~~~~About me~~~~~~~~~~ -->
 
-      <div class = "videoImage">
-        <button class="imageButton" onclick = "window.location.href = 'KnightLight.html'"> <img src="media/KnightLightLogo.png" alt="KnightLight Game Logo" /> </button>
-      </div>
-
-      <div class = "videoText">
-        <button class="imageButton" onclick = "window.location.href = 'KnightLight.html'"> 2D Puzzle Platformer <br> Click Here to Learn More </button>
-      </div>
-    </div>
-
-    <!-- ~~~~~~~~~~~Content~~~~~~~~~~~ -->
-    <div class = "content">
+    <div class = "aboutContainer">
 
     </div>
 
@@ -85,4 +68,5 @@
         <!-- <a href="https://thecabbageknight.itch.io/" target="_blank" rel="noopener noreferrer"> <img src="media/ItchLogo.png" alt="Itch Logo" /> </a> -->
     </div>
   </body>
+
 </html>
