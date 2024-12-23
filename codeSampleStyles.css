@@ -34,18 +34,48 @@
   z-index: 0;
 }
 
+.codeSnippet
+{
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw; /* Add some space between the boxes */
+  flex-wrap: nowrap; /* Ensure content stays in a single row */
+}
+
+.codeTitle
+{
+  font-family: CascadiaMono;
+  margin-left: 1.7vw;
+  font-size: calc(0.75vw + 0.25vh);
+  color: white;
+}
+
+.codeDescription
+{
+  width: 50%;
+  font-family: CascadiaMono;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  font-size: calc(0.75vw + 0.25vh);
+  color: white;
+}
+
 .prettyprint
 {
-  height: 20000px;
+  height: auto; /* Adjust height dynamically based on content */
+  width: 50%; /* Set width to 50% of the screen */
+  padding: 1vw 1vh; /* Add padding inside the box */
+  margin-top: 0.1vh; /* Keep space for the fixed header */
+  margin-left: 1.5vw;
 
-  padding: 0px;
-  margin-top: calc(3.25vw + 2.25vh); /* Give space for the fixed header */
+  color: white; /* Text color */
+  background-color: rgb(24, 24, 24); /* Background color */
 
-  flex-grow: 1;
-
-  color: white;
-
-  background-color: rgb(24, 24, 24);
+  border: 1px solid white; /* White border */
+  border-radius: 4px; /* Rounded corners */
+  
+  font-size:  calc(0.52vw + 0.22vh);;
+  overflow-x: auto; /* Allow horizontal scrolling for long lines of code *
 }
 
 /* Google Prettify syntax highlighting classes */
