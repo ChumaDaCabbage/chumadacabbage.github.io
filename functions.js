@@ -25,7 +25,7 @@ function scrollToFooter()
     if (response.ok) 
     {
       const code = await response.text();
-      document.getElementById('overlappSnippet').innerHTML = `<pre class="prettyprint lang-cpp">${code}</pre>`;
+      document.getElementById('overlapSnippet').innerHTML = `<pre class="prettyprint lang-cpp">${code}</pre>`;
       PR.prettyPrint();  //Run Google Prettify to style the code
     } 
     else 
