@@ -17,15 +17,15 @@ function scrollToFooter()
 }
 
  //Function to load the code from a file
- async function loadCode() 
+ async function loadCode(filename) 
  {
   try 
   {
-    const response = await fetch('overlap.cpp');  //The file to fetch
+    const response = await fetch(filename);  //The file to fetch
     if (response.ok) 
     {
       const code = await response.text();
-      document.getElementById('overlapSnippet').innerHTML = `<pre class="prettyprint lang-cpp">${code}</pre>`;
+      document.getElementById(filename).innerHTML = `<pre class="prettyprint lang-cpp">${code}</pre>`;
       PR.prettyPrint();  //Run Google Prettify to style the code
     } 
     else 
@@ -37,4 +37,26 @@ function scrollToFooter()
   {
     console.error('Error loading the code:', error);
   }
+}
+
+//Function to load html into a div
+async function loadHTML(filename) 
+{
+ try 
+ {
+   const response = await fetch(filename);  //The file to fetch
+   if (response.ok) 
+   {
+     const html = await response.text();
+     document.getElementById(filename).innerHTML = `${html}`;
+   } 
+   else 
+   {
+     console.error('Failed to load the html file');
+   }
+ } 
+ catch (error) 
+ {
+   console.error('Error loading the html:', error);
+ }
 }

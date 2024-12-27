@@ -1,0 +1,9 @@
+Fix zoom problems:
+	Text doesnt grow 
+	Other stuff probably
+	
+Get Tabs working in code samples page
+Add more code samples
+write about page
+make knightlight page
+add more projects to project page and make pages for them

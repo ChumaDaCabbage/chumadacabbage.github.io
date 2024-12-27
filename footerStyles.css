@@ -29,6 +29,9 @@
   {
     cursor: pointer;
     height: 1.75vw;
+    border: none; 
+    margin: 0 0 0 0;
+    display: flex;
   }
   .footer .links img:hover 
   {
@@ -48,7 +51,7 @@
     display: flex;
     align-items: center;
     transition: color 0.5s ease-out;
-    word-spacing: 1px;
+    word-spacing: 0;
   }
 
   .highlight 

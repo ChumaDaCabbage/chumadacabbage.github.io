@@ -20,6 +20,13 @@
 
     <!-- Connect javascript functions -->
     <script type="text/javascript" src="../functions.js"></script>
+
+    <!-- Load footer into this file-->
+    <script> window.onload = function() 
+      {
+        loadHTML('../footer.html');
+      }; 
+    </script>
   </head>
 
   <!-- ---------------------------------------------------------------------------- -->
@@ -50,23 +57,8 @@
     </div>
 
     <!-- ~~~~~~~~~~~Footer~~~~~~~~~~~~ -->
-    <hr class="footerLine" style = "width: 100%; margin: 0 auto;">
-
-    <div class = "footer">
-      <div class = "contactInfo">
-        <div class = "item">
-          <img src="../media/EmailIcon.png" alt="Email" style="width: 10%; border: none;"/>
-          <p>&ensp;<a href="mailto:evanpgray.work@gmail.com" style="text-decoration: none; color: inherit;">evanpgray.work@gmail.com</a>&emsp;</p>
-        </div>
-        <div class = "item">
-          <img src="../media/PhoneIcon.png" alt="Phone" style="width: 14%; border: none;"/>
-          <p>&ensp;+1 (425) 213-7629</p>
-        </div>
-      </div>
-      <div class = "links">
-        <a href="https://www.linkedin.com/in/evanpatrickgray" target="_blank" rel="noopener noreferrer"> <img src="../media/LinkedInLogo.png" alt="LinkedIn Logo" /> </a>
-        <!-- <a href="https://thecabbageknight.itch.io/" target="_blank" rel="noopener noreferrer"> <img src="media/ItchLogo.png" alt="Itch Logo" /> </a> -->
+    <div class = "footerLoadingZone" id="../footer.html">
+      <!--Footer will get autoloaded here :D -->
     </div>
   </body>
-
 </html>

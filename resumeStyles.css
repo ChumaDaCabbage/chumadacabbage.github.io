@@ -5,6 +5,8 @@
  /* Body */
  body 
  {
+  transform: scale(1);
+  transform-origin: top left;
   background-color: black;
  }
  body, html 
