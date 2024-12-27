@@ -43,7 +43,8 @@
   {
     display: flex;
     flex-wrap: wrap;
-    font-size: calc(0.75vw + 0.25vh);
+    /*font-size: calc(0.75vw + 0.25vh);*/
+    font-size: calc(0.6vw + 0.2vh + 0.4rem);
   }
 
   .footer .contactInfo .item
