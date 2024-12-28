@@ -29,7 +29,7 @@
     <script> 
       window.onload = function() 
       {
-        loadCode('overlap.cpp');
+        loadCode('bst-map.cpp');
         loadHTML('/footer.html');
       }; 
     </script>
@@ -57,12 +57,12 @@
 
     <!-- ~~~~~~~~~~~Tabs~~~~~~~~~~ -->
     <div class = "tabrow">
-      <button class="tab" onclick = "location.reload()">
+      <button class="tabinactive" onclick = "window.location.href = '/codesamples/overlap'">
         <div class = "codeTitle">
           <h1>Overlapping Rectangles</h1>
         </div>
       </button>
-      <button class = "tabinactive" onclick = "window.location.href = '/codesamples/bst-map'">
+      <button class = "tab" onclick = "location.reload()">
         <div class = "codeTitle">
           <h1>Binary Search Tree Map</h1>
         </div>
@@ -77,38 +77,55 @@
 
     <!-- ~~~~~~~~~~~Code Sample~~~~~~~~~~~ -->
     <div class = "codeSnippet" id="codeSnippet">
-      <div class = "codeLoadingZone" id="overlap.cpp">
+      <div class = "codeLoadingZone" id="bst-map.cpp">
         <!-- Code snippet will get autoloaded here :D -->
       </div>
       <div class = "codeDescription">
 <h2>Overview:</h2>
-<p>This code determines how many cells in a grid are covered by a specific number of overlapping rectangles with a sweep line algorithm to avoid processing every cell individually. In given test cases the grid can be as large as 10^9*10^9, and contain up to 10^5 rectangles. The output is a map indicating how many cells are covered by exactly 𝐶 rectangles, modulo 7001.</p>
+<p>This code implements a binary search tree (BST) map, which stores pairs of keys and values to allow operations such as insertion, lookup, deletion, and traversal. The map supports both non-const and const iterators to facilitate interaction with stored elements.</p>
 
 
 <h2>Details:</h2>
-<p>1. Input Processing:</p>
+<p>1. Node Implementation:</p>
 <div class="inset">
-<p>The code begins by reading rectangle data from a file. Each rectangle is defined by its top-left corner (<code>x₁, y₁</code>) and bottom-right corner (<code>x₂, y₂</code>). For each rectangle, two events are created:</p>
-<ul><li>A start event at <code>y₁</code>, for a rectangle covering the x-range [<code>x₁, x₂</code>].</li>
-<li>An end event at <code>y₂ + 1</code>, for a rectangle un-covering the x-range [<code>x₁, x₂</code>].</li></ul>
-<p>These events are stored in a multimap, which automatically sorts them by their y-coordinates. This ensures that the sweep line processes the events in the correct order, moving from top to bottom.</p>
+<p>Each node stores a key, a value, pointers to its parent, left child, and right child.
+
+The node also includes the following helper methods:
+</p>
+<ul><li><code>Key()</code>: Retrieves the node's key.</li>
+<li><code>Value()</code>: Retrieves or modifies the node's value.</li>
+<li><code>first()</code>: Finds the leftmost node (smallest key).</li>
+<li><code>last()</code>: Finds the rightmost node (largest key).</li>
+<li><code>increment()</code> and <code>decrement</code>: Traverse the tree to find the successor or predecessor node.</li></ul>
 </div>
-<p>2. Sweep Line Algorithm:</p>
+<p>2. Iterators:</p>
 <div class="inset">
-<p>The algorithm uses a "sweep line" to move down the grid and process events. It keeps track of overlap counts dynamically, avoiding the need to check every cell.</p>
-<p>Tracking Overlaps:</p>
-<div class="insetDeep"><p>A data structure called <code>LineData</code> keeps track of the number of overlaps at each x-coordinate using a vector. Additionally, it uses a hash map to count how many x-coordinates share the same overlap value (e.g., "10 x-coordinates have an overlap count of 1").</p></div>
-<p>Processing Events:</p>
-<div><ul><li>For a start event, the overlap count for all x-coordinates in the range [<code>x₁, x₂</code>] is incremented.</li>
-<li>For an end event, the overlap count for the same range is decremented.</li>
-<li>After adjusting overlap counts, the hash map is updated to reflect the new distribution of overlap counts.</li></ul></div> 
-<p>Calculating Area Contributions:</p>
-<div class="insetDeep"><p>Between events, the algorithm calculates the total area contributed by each overlap count. This is done by multiplying the number of x-coordinates with a specific overlap count by the vertical distance (difference in y-coordinates) between consecutive events. These contributions are added to the final result map, with all calculations performed modulo 7001 to prevent overflow.</p></div> 
-<p>Efficiency:</p>
-<div class="insetDeep"><p>The algorithm processes only the edges of rectangles (start and end events) and updates overlap counts directly, making it efficient even for large inputs.</p></div> 
+<p>Non-const iterators allow modification of elements, while const iterators provide read-only access.</p>
+<p>Supports standard operations:</p>
+<ul><li>Increment (both prefix and postfix).</li>
+<li>Assignment operations for when not dereferenced</li>
+<li>Dereference (* and ->) to access or modify node content.</li>
+<li>Equality and inequality comparisons.</li></ul>
 </div>
-<h3>3. Output:</h3>
-<div class="inset"><p>The final output is a map where the keys are overlap counts, and the values indicate the total area covered by those counts, modulo 7001. (e.g., 500 cells with 0 overlaps, 230 cells with 1 overlaps, ect.) This approach ensures the solution is scalable and avoids unnecessary computations.</p></div>
+<h3>3. Core BST Functions:</h3>
+<div class="inset">
+<ul><li><code>begin()</code> and <code>end()</code>: Gets the start/end of this tree as an iterator</li>
+<li><code>operator[](KEY_TYPE const& key)</code>: Handles insertion into the tree </li>
+<li><code>find(KEY_TYPE const& key)</code>: Finds node of passed key in this BSTmap </li>
+<li><code>erase(BSTmap_iterator it)</code>: Erases node at passed iterator from this tree </li>
+<li><code>size()</code>: Gets the number of nodes in this tree </li>
+<p>In addition to this functionality there are essential constructors, assignment operators, and a destructor to handle the tree's lifecycle efficiently. These functions ensure that the tree can be copied, moved, and properly cleaned up.</p>
+</div>
+<h3>4. Helper Functions:</h3>
+<div class="inset">
+<p>To assist with the functionality of the BST, there are a variety of private helper functions designed to manage the tree’s structure and support core operations</p>
+<ul><li><code>findNode(KEY_TYPE const& key, Node** last = NULL)</code>: Handles finding nodes in the tree, is used by <code>find</code> and <code>insert</code></li>
+<li><code>addNode(Node* nodeToAddFrom, Node* nodeToAdd)</code>: Handles adding nodes to the tree, sets to root if needed </li>
+<li><code>freeNode(Node** node)</code>: Frees the memory of the passed node</li>
+<li><code>updateParent(Node* oldChild, Node* newChild)</code>: Handles swapping out children of a parent while handling edge cases</li>
+<li><code>freeAll(Node** node)</code>: Frees passed node and all its children, used to clean up trees</li>
+<li><code>addAll(Node* node, Node* lastNode = NULL)</code>: Copies passed node and all of it's children into this tree, used for copying trees</li></ul>
+</div>
       </div>
     </div>
 

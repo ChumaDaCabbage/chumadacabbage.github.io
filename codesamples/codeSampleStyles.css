@@ -45,23 +45,106 @@
   background-color: rgb(24, 24, 24); /* Background color */
 
   border: 0.01vw solid white; /* White border */
-  border-radius: 0.5vw; /* Rounded corners */
+  border-radius: 0.0vw; /* Rounded corners */
   
   /*font-size:  calc(0.52vw + 0.22vh);*/
   font-size: calc(0.364vw + 0.154vh + 0.35rem);
   overflow-x: auto; /* Allow horizontal scrolling for long lines of code */
   overflow-y: hidden; /* Hide vertical scrollbar */
+  z-index: 2;
+}
+
+.tabrow
+{
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap; /* Ensure content stays in a single row */
+  width: 100%;
+  height: auto;
+  margin-left: 1.5vw;
+  margin-top: 2.0vh;
+  margin-bottom: -0.2vh;
+}
+
+.tab, .tabinactive 
+{
+  background: none; /* Remove default button background */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+
+  color: white;
+  cursor: pointer;
+
+  -moz-border-radius: 0px;
+  -webkit-border-radius: calc(0.5vh + 0.5vw) calc(0.5vh + 0.5vw) 0vh 0vh;
+  border-radius: calc(0.5vh + 0.5vw) calc(0.5vh + 0.5vw) 0vh 0vh; 
+
+  font-family: CascadiaMono;
+  font-size: calc(0.27vw + 0.08vh + 0.3rem);
+}
+
+.tab
+{
+  height: auto;
+  width: min-content;
+  display: inline-block;
+
+  margin-left: 0vw;
+  margin-top: 0.5vh;
+
+  border: 0.01vw solid white; /* White border */
+}
+
+.tab:hover 
+{
+  background-color: rgb(86, 86, 86); /* Highlighted background */
+  color: black; /* Change text color */
 }
 
 .codeTitle
 {
-  font-family: CascadiaMono;
-  margin-left: 1.7vw;
-  margin-top: 1.0vh;
-  margin-bottom: 1.0vh;
-  /*font-size: calc(0.5vw + 0.15vh);*/
-  font-size: calc(0.27vw + 0.08vh + 0.3rem);
+  padding: 1vh;
   color: white;
+
+  width: min-content;
+  white-space: nowrap;
+
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.tabinactive
+{
+  height: auto;
+  width: min-content;
+  display: inline-block;
+
+  margin-left: 0vw;
+  margin-top: 2.0vh;
+
+  border: 0.01vw solid gray; /* White border */
+}
+
+.tabinactive:hover 
+{
+  background-color: rgb(86, 86, 86); /* Highlighted background */
+  color: black; /* Change text color */
+  border: 0.01vw solid white; /* White border */
+
+  margin-left: 0vw;
+  margin-top: 0.5vh;
+}
+
+.tabinactive:hover .codeTitle
+{
+  color: white;
+}
+
+.tabinactive .codeTitle
+{
+  padding: 1vh;
+  color: gray;
+
+  width: min-content;
+  white-space: nowrap;
 }
 
 .codeDescription
@@ -69,7 +152,7 @@
   width: 50%;
   font-family: CascadiaMono;
   margin-left: 1vw;
-  margin-right: 1vw;
+  margin-right: 1.5vw;
   margin-top: 0;
   margin-bottom: 0;
   font-size: calc(0.75vw + 0.25vh);

@@ -23,6 +23,17 @@
   font-family: CascadiaMono;
 }
 
+/* Optional Line styling */
+.header-line 
+{
+  position: absolute; /* Remove from the flex flow */
+  bottom: 0;          
+  left: 0;           
+  width: 100%;   
+  border: 0.01vw solid white;
+  margin: -0.1vh;     
+}
+
 /* Title */
 .header .title 
 {
