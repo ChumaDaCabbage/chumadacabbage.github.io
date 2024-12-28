@@ -5,10 +5,10 @@
 @font-face 
 {
   font-family: 'CascadiaMono';
-  src: url('fonts/CascadiaMono.woff');
+  src: url('../media/fonts/CascadiaMono.woff');
 }
 
 @font-face {
   font-family: 'WebsitePixel';
-  src: url('fonts/websitepixelfont.woff');
+  src: url('../media/fonts/websitepixelfont.woff');
 }
