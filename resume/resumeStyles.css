@@ -29,7 +29,6 @@
   height: 0px;
 
   padding: 0px;
-  margin-top: calc(3.25vw + 2.25vh); /* Give space for the fixed header */
 
   flex-grow: 1;
 

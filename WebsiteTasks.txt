@@ -1,7 +1,3 @@
-Fix zoom problems:
-	Text doesnt grow 
-	Other stuff probably
-	
 Get Tabs working in code samples page
 Add more code samples
 write about page

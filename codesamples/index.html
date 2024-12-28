@@ -10,7 +10,7 @@
     <title>Evan Gray | Code Samples</title>
 
     <!-- Link to the external stylesheets -->
-    <link rel="stylesheet" type="text/css" href="../codeSampleStyles.css">
+    <link rel="stylesheet" type="text/css" href="codeSampleStyles.css">
     <link rel="stylesheet" type="text/css" href="../headerStyles.css">
     <link rel="stylesheet" type="text/css" href="../footerStyles.css">
     <link rel="stylesheet" type="text/css" href="../fonts.css">
@@ -26,11 +26,12 @@
 
     <!-- Load footer into this file-->
     <!-- Also Load code snippets on page load and run prettify on them -->
-    <script> window.onload = function() 
-             {
-               loadCode('overlap.cpp');
-               loadHTML('../footer.html');
-             }; 
+    <script> 
+      window.onload = function() 
+      {
+        loadCode('overlap.cpp');
+        loadHTML('../footer.html');
+      }; 
     </script>
   </head>
 
@@ -40,9 +41,7 @@
 
   <body>
     <!-- ~~~~~~~~~~~Header~~~~~~~~~~~ -->
-    <div class="sticky-block">
-    </div>
-    <div class = "header">
+    <div class = "header" style="background-color: black;">
       <div class = "title">
         Evan Gray       
       </div>
@@ -54,10 +53,9 @@
         <button class= " button" onclick = "scrollToFooter()">Contact</button>
       </div>
     </div>
+    <hr style = "width: 100%; margin: 0 0; border: 0.01vw solid white;">
 
     <!-- ~~~~~~~~~~~Code Samples~~~~~~~~~~~ -->
-
-    <hr style = "width: 100%; margin: 0 0; margin-top: calc(3.25vw + 2.25vh); border: 0.01vw solid white;;">
     <div class = "codeTitle">
       <h1>Overlapping Rectangles</h1>
     </div>

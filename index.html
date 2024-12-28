@@ -64,9 +64,15 @@
       </div>
 
       <div class = "videoText">
-        <button class="imageButton" onclick = "window.location.href = 'KnightLight.html'"> 2D Puzzle Platformer <br> Click Here to Learn More </button>
+        <button class="button" onclick = "window.location.href = 'KnightLight.html'"> 2D Puzzle Platformer <br> Click Here to Learn More </button>
       </div>
     </div>
+
+    <script>
+      //Set video offset when page loads and on resize
+      setOffsetFromHeight('header', 'videoContainer');
+      window.addEventListener('resize', function() { setOffsetFromHeight('header', 'videoContainer'); });
+    </script>
 
     <!-- ~~~~~~~~~~~Content~~~~~~~~~~~ -->
     <div class = "content">

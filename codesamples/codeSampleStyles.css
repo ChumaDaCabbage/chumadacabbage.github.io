@@ -24,18 +24,6 @@
    overflow-y: auto; /* Enable vertical scrolling */
  }
 
- .sticky-block 
- {
-  position: fixed; top: 0; left: 0;
-  width: 100%;
-  height: calc(3.25vw + 2.25vh);
-  background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 0;
-}
-
 .codeSnippet
 {
   display: flex;
@@ -47,7 +35,7 @@
 .codeSnippet .codeLoadingZone
 {
   height: auto; /* Adjust height dynamically based on content */
-  width: 50%; /* Set width to 50% of the screen */
+  width: 60%; /* Set width to 50% of the screen */
   padding: 1vw 1vh; /* Add padding inside the box */
   margin-top: 0.1vh;
   margin-bottom: 3vh;
@@ -59,8 +47,10 @@
   border: 0.01vw solid white; /* White border */
   border-radius: 0.5vw; /* Rounded corners */
   
-  font-size:  calc(0.52vw + 0.22vh);;
+  /*font-size:  calc(0.52vw + 0.22vh);*/
+  font-size: calc(0.364vw + 0.154vh + 0.35rem);
   overflow-x: auto; /* Allow horizontal scrolling for long lines of code */
+  overflow-y: hidden; /* Hide vertical scrollbar */
 }
 
 .codeTitle
@@ -69,7 +59,8 @@
   margin-left: 1.7vw;
   margin-top: 1.0vh;
   margin-bottom: 1.0vh;
-  font-size: calc(0.5vw + 0.15vh);
+  /*font-size: calc(0.5vw + 0.15vh);*/
+  font-size: calc(0.27vw + 0.08vh + 0.3rem);
   color: white;
 }
 
@@ -82,6 +73,7 @@
   margin-top: 0;
   margin-bottom: 0;
   font-size: calc(0.75vw + 0.25vh);
+  font-size: calc(0.50vw + 0.15vh + 0.35rem);
   color: white;
   white-space: pre-wrap;
 }

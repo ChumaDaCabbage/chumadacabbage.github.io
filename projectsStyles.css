@@ -98,13 +98,14 @@
   color: white;
   font-family: WebsitePixel;
 
-  width: 100%;
+  width: auto;
 
   position: absolute; top: 35vw; left: 49.7vw;
   transform: translate(-50%, -50%); /* Centers the text horizontally and vertically */
 
   text-align: center;
-  font-size: calc(1.5vw + 0.5vh);
+  /*font-size: calc(1.5vw + 0.5vh);*/
+  font-size: calc(1.35vw + 0.45vh + 0.25rem);
   line-height: 1.5;
 }
 
