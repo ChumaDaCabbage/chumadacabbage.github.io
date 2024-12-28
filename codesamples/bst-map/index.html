@@ -1,5 +1,5 @@
 <!--__________________________________________________________________________________________________________-->
-<!--____________________________________________CODE SAMPLES PAGE_____________________________________________-->
+<!--________________________________________BST_MAP CODE SAMPLES PAGE_________________________________________-->
 <!--__________________________________________________________________________________________________________-->
 <!DOCTYPE html>
 <html> 
@@ -62,14 +62,14 @@
           <h1>Overlapping Rectangles</h1>
         </div>
       </button>
+      <button class = "tabinactive" onclick = "window.location.href = '/codesamples/opengl-computeshader'">
+        <div class = "codeTitle">
+          <h1>OpenGL Compute Shaders</h1>
+        </div>
+      </button>
       <button class = "tab" onclick = "location.reload()">
         <div class = "codeTitle">
           <h1>Binary Search Tree Map</h1>
-        </div>
-      </button>
-      <button class = "tabinactive">
-        <div class = "codeTitle">
-          <h1>LongernameTemp2</h1>
         </div>
       </button>
     </div>
@@ -86,7 +86,7 @@
 
 
 <h2>Details:</h2>
-<p>1. Node Implementation:</p>
+<p>Node Implementation:</p>
 <div class="inset">
 <p>Each node stores a key, a value, pointers to its parent, left child, and right child.
 
@@ -98,7 +98,7 @@ The node also includes the following helper methods:
 <li><code>last()</code>: Finds the rightmost node (largest key).</li>
 <li><code>increment()</code> and <code>decrement</code>: Traverse the tree to find the successor or predecessor node.</li></ul>
 </div>
-<p>2. Iterators:</p>
+<p>Iterators:</p>
 <div class="inset">
 <p>Non-const iterators allow modification of elements, while const iterators provide read-only access.</p>
 <p>Supports standard operations:</p>
@@ -107,7 +107,7 @@ The node also includes the following helper methods:
 <li>Dereference (* and ->) to access or modify node content.</li>
 <li>Equality and inequality comparisons.</li></ul>
 </div>
-<h3>3. Core BST Functions:</h3>
+<p>Core BST Functions:</p>
 <div class="inset">
 <ul><li><code>begin()</code> and <code>end()</code>: Gets the start/end of this tree as an iterator</li>
 <li><code>operator[](KEY_TYPE const& key)</code>: Handles insertion into the tree </li>
@@ -116,7 +116,7 @@ The node also includes the following helper methods:
 <li><code>size()</code>: Gets the number of nodes in this tree </li>
 <p>In addition to this functionality there are essential constructors, assignment operators, and a destructor to handle the tree's lifecycle efficiently. These functions ensure that the tree can be copied, moved, and properly cleaned up.</p>
 </div>
-<h3>4. Helper Functions:</h3>
+<p>Helper Functions:</p>
 <div class="inset">
 <p>To assist with the functionality of the BST, there are a variety of private helper functions designed to manage the tree’s structure and support core operations</p>
 <ul><li><code>findNode(KEY_TYPE const& key, Node** last = NULL)</code>: Handles finding nodes in the tree, is used by <code>find</code> and <code>insert</code></li>
