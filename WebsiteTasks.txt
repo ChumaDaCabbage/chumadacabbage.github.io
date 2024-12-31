@@ -1,3 +1,2 @@
-write about page
 make knightlight page
 add more projects to project page and make pages for them 

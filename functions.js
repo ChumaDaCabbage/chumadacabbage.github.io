@@ -16,9 +16,23 @@ function scrollToFooter()
   });
 }
 
- //Function to load the code from a file
- async function loadCode(filename) 
- {
+function highlightInfo() 
+{
+  //Highlight the text elements in the footer
+  const textElements = document.querySelectorAll('.item');
+  
+  textElements.forEach((textElement) => 
+  {
+    textElement.classList.add('highlight');
+    
+    //Remove the highlight class after a delay (1 second)
+    setTimeout(() => {textElement.classList.remove('highlight');}, 1000);
+  });
+}
+
+//Function to load the code from a file
+async function loadCode(filename) 
+{
   try 
   {
     const response = await fetch(filename);  //The file to fetch

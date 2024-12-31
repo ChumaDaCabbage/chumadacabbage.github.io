@@ -12,7 +12,6 @@
     <!-- Link to the external stylesheets -->
     <link rel="stylesheet" type="text/css" href="aboutStyles.css">
     <link rel="stylesheet" type="text/css" href="/headerStyles.css">
-    <link rel="stylesheet" type="text/css" href="/footerStyles.css">
     <link rel="stylesheet" type="text/css" href="/fonts.css">
 
     <!-- Set icon -->
@@ -20,13 +19,6 @@
 
     <!-- Connect javascript functions -->
     <script type="text/javascript" src="/functions.js"></script>
-
-    <!-- Load footer into this file-->
-    <script> window.onload = function() 
-      {
-        loadHTML('/footer.html');
-      }; 
-    </script>
   </head>
 
   <!-- ---------------------------------------------------------------------------- -->
@@ -35,8 +27,6 @@
 
   <body>
     <!-- ~~~~~~~~~~~Header~~~~~~~~~~~ -->
-    <div class="sticky-block">
-    </div>
     <div class = "header">
       <div class = "title">
         Evan Gray       
@@ -46,19 +36,32 @@
         <button class= " button" onclick = "window.location.href = '/resume/'">Resume</button>
         <button class= " button" onclick = "window.location.href = '/codesamples/'">Code Samples</button>
         <button class= " button" onclick = "location.reload()">About</button>
-        <button class= " button" onclick = "scrollToFooter()">Contact</button>
+        <button class= " button" onclick = "highlightInfo()">Contact</button>
       </div>
     </div>
 
     <!-- ~~~~~~~~~~~About me~~~~~~~~~~ -->
 
     <div class = "aboutContainer">
+      <div class = "aboutOther">
+        <img src="/media/EvanG.png" alt="KnightLight Game Logo" />
+        <div class = "item">
+          <img src="/media/EmailIcon.png" alt="Email" style="width: calc(1.8vw + 0.4rem); border: none; margin-left: 3vw;"/>
+          <p>&ensp;<a href="mailto:evanpgray.work@gmail.com" style="text-decoration: none; color: inherit;">evanpgray.work@gmail.com</a>&emsp;</p>
+        </div>
+        <div class = "item">
+          <img src="/media/PhoneIcon.png" alt="Phone" style="width: calc(1.8vw + 0.4rem); border: none; margin-left: 2vw;"/>
+          <p>&ensp;+1 (425) 213-7629</p>
+        </div>
 
-    </div>
-
-    <!-- ~~~~~~~~~~~Footer~~~~~~~~~~~~ -->
-    <div class = "footerLoadingZone" id="/footer.html">
-      <!--Footer will get autoloaded here :D -->
+      </div>
+      <div class = "aboutText">
+<p>I am currently pursuing a Bachelor of Science in Computer Science in Real-Time Interactive Simulation at DigiPen Institute of Technology.</p>
+<p>I am deeply interested in computer graphics, with in-depth experience in Vulkan and OpenGL, and passionate about building high-performance, visually stunning graphics systems and tools. My academic journey and project experience have equipped me with strong skills in rendering techniques, shader programming, and real-time interactive systems. I enjoy the challenge of optimizing complex graphics processes to bring creative and technical visions to life.</p> 
+<p>In addition, I have consistently achieved the Dean's List throughout DigiPen's challenging course load, reflecting my commitment to academic excellence and passion for the software development industry.</p>       
+<p>Beyond my technical skills, I am a proactive team member who values collaboration, as demonstrated in my experience managing teams to meet project milestones on time. With experience in professional project management frameworks like Scrum, I am well-prepared to contribute effectively and seamlessly within any team environment.</p>       
+<p>Looking ahead, my goal is to join the software development industry as a graphics programmer, where I can contribute to your cutting-edge project. I am eager to work with innovative teams that push the boundaries of what’s possible in graphics, where I can continue refining my skills and make a meaningful impact in this dynamic field.</p>
+      </div>
     </div>
   </body>
 </html>
