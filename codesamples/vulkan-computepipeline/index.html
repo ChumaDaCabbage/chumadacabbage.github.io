@@ -1,0 +1,119 @@
+<!--__________________________________________________________________________________________________________-->
+<!--_________________________________VULKAN_COMPUTEPIPELINE CODE SAMPLES PAGE_________________________________-->
+<!--__________________________________________________________________________________________________________-->
+<!DOCTYPE html>
+<html> 
+  <!-- ---------------------------------------------------------------------------- -->
+  <!-- ------------------------------------Head------------------------------------ -->
+  <!-- ---------------------------------------------------------------------------- -->
+  <head>
+    <title>Evan Gray | Code Samples</title>
+
+    <!-- Link to the external stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/codesamples/codeSampleStyles.css">
+    <link rel="stylesheet" type="text/css" href="/headerStyles.css">
+    <link rel="stylesheet" type="text/css" href="/footerStyles.css">
+    <link rel="stylesheet" type="text/css" href="/fonts.css">
+
+    <!-- Set icon -->
+    <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+
+    <!-- Connect javascript functions -->
+    <script type="text/javascript" src="/functions.js"></script>
+
+    <!-- Link to the google code-prettify library styles -->
+    <script type="text/javascript" src="/googlePrettify/prettify.js"></script>
+
+    <!-- Load footer into this file-->
+    <!-- Also Load code snippets on page load and run prettify on them -->
+    <script> 
+      window.onload = function() 
+      {
+        loadCode('computepipeline.cpp');
+        loadHTML('/footer.html');
+      }; 
+    </script>
+  </head>
+
+  <!-- ---------------------------------------------------------------------------- -->
+  <!-- ------------------------------------Body------------------------------------ -->
+  <!-- ---------------------------------------------------------------------------- -->
+
+  <body>
+    <!-- ~~~~~~~~~~~Header~~~~~~~~~~~ -->
+    <div class = "header" style="background-color: black;">
+      <div class = "title">
+        Evan Gray       
+      </div>
+      <div class = "buttons">
+        <button class= " button" onclick = "window.location.href = '/'">Projects</button>
+        <button class= " button" onclick = "window.location.href = '/resume/'">Resume</button>
+        <button class= " button" onclick = "location.reload()">Code Samples</button>
+        <button class= " button" onclick = "window.location.href = '/about/'">About</button>
+        <button class= " button" onclick = "scrollToFooter()">Contact</button>
+      </div>
+      <hr class="header-line">
+    </div>
+
+    <!-- ~~~~~~~~~~~Tabs~~~~~~~~~~ -->
+    <div class = "tabrow">
+      <button class = "tabinactive" onclick = "window.location.href = '/codesamples/opengl-computeshader'">
+        <div class = "codeTitle">
+          <h1>OpenGL Compute Shaders</h1>
+        </div>
+      </button>
+      <button class="tabinactive" onclick = "window.location.href = '/codesamples/overlap'">
+        <div class = "codeTitle">
+          <h1>Overlapping Rectangles</h1>
+        </div>
+      </button>
+      <button class="tab" onclick = "location.reload()">
+        <div class = "codeTitle">
+          <h1>Vulkan Compute Pipeline</h1>
+        </div>
+      </button>
+      <button class = "tabinactive" onclick = "window.location.href = '/codesamples/bst-map'">
+        <div class = "codeTitle">
+          <h1>Binary Search Tree Map</h1>
+        </div>
+      </button>
+    </div>
+    <hr style="width: 96.9%; margin-top: 0; margin-bottom: -0.2vh; margin-left: 1.5vw;">
+
+    <!-- ~~~~~~~~~~~Code Sample~~~~~~~~~~~ -->
+    <div class = "codeSnippet" id="codeSnippet">
+      <div class = "codeLoadingZone" id="computepipeline.cpp" style="font-size: calc(0.3094vw + 0.1309vh + 0.2975rem);">
+        <!-- Code snippet will get autoloaded here :D -->
+      </div>
+      <div class = "codeDescription">
+<h2>Overview</h2>
+<p>This code provides a abstraction for managing compute pipelines with the Vulkan API. It integrates functionality for setting up compute shader modules, creating the pipeline/pipeline layouts, and binding the resources for use. Enabling easy interaction with Vulkan's low-level pipeline architecture for developers.</p>
+
+
+<h2>Showcase Purpose</h2>
+<p>This code snippet demonstrates my ability to work with the Vulkan API, focusing on compute pipelines and it's shaders. By creating an abstraction layer for Vulkan's compute pipeline, tasks like shader module creation, pipeline layout configuration, and pipeline creation are streamlined.</p>
+
+
+<h2>Details</h2>
+<p>1. Shader Creation:</p>
+<div class="inset">
+<p>Shader Source Reading: The <code>ReadShader()</code> function reads the shader source code from a file and returns it as a string.</p>
+<p>Shader Module Creation: The <code>CreateShaderModule()</code> function takes SPIR-V code as input and creates a Vulkan shader module.</p>
+</div>
+<p>2. Pipeline Layout Setup:</p>
+<div class="inset">
+<p>The <code>CreatePipelineLayout()</code> function initializes the Vulkan <code>VkPipelineLayout</code> object using the descriptor set layouts from the uniforms. It handles errors if layout creation fails.</p>
+<p>While the descriptor set layouts are being put into a vector, the uniforms are also assigned binding indices.</p>
+</div>
+<p>3. Compute Pipeline Creation:</p>
+<div class="inset">
+<p><code>CreatePipeline()</code> function performs the following: <ul><li>Verifies that a pipeline layout exists.</li><li>Reads and compiles the compute shader source code into SPIR-V, which is then made into a shader module.</li><li>Sets up the shader stage information using Vulkan structures.</li><li>Creates the compute pipeline using Vulkan's <code>vkCreateComputePipelines</code>.</li></ul></p></div>
+      </div>
+    </div>
+
+    <!-- ~~~~~~~~~~~Footer~~~~~~~~~~~~ -->
+    <div class = "footerLoadingZone" id="/footer.html">
+      <!--Footer will get autoloaded here :D -->
+    </div>
+  </body>
+</html>
