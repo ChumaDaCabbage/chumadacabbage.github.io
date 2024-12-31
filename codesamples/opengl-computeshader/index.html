@@ -85,34 +85,40 @@
 <p>This code provides an abstraction layer for OpenGL compute shaders. It allows the creation, management, and execution of compute shaders through a series of functions. This implementation manages resources like buffers, textures, and uniforms, and provides efficient dispatching of compute shader workloads in a rendering pipeline. The core features include the ability to load shader code from files, compile and link shaders, dispatch compute tasks, and handle GPU memory and data binding efficiently.</p>
 
 
+<h2>Showcase Purpose:</h2>
+<p>This code demonstrates my experience in writing code utilizing the OpenGL API, in this case specifically it's compute shaders.</p>
+<p>This abstraction layer simplifies shader management, buffer handling, and uniform updates, streamlining the use of compute shaders in rendering pipelines. It reduces duplicate code and enhances overall code maintainability.</p>
+<p>The implementation highlights my ability to design efficient and developer-friendly solutions, with features like uniform caching, error handling, and memory management ensuring reliable performance. These optimizations minimize GPU communication overhead and improve runtime efficiency.</p>
+
+
 <h2>Details:</h2>
 <p>Input Processing:</p>
 <div class="inset">
-<p>The constructor of the ComputeShader class reads the shader source code from a file and compiles it into a program. The ParseShader function is responsible for reading the file and returning the shader source code as a string.</p>
-<p>The shader code is then passed to CreateShader, which compiles the shader and links it into a program.</p>
+<p>The constructor of the ComputeShader class reads the shader source code from a file and compiles it into a program. The <code>ParseShader()</code> function is responsible for reading the file and returning the shader source code as a string.</p>
+<p>The shader code is then passed to <code>CreateShader()</code>, which compiles the shader and links it into a program.</p>
 </div>
 <p>Shader Dispatching:</p>
 <div class="inset">
-<p>The Dispatch function sends the compute shader to the GPU for execution, specifying the workgroup size and whether a memory barrier is needed. A memory barrier ensures that memory operations are completed in the correct order.</p>
-<p>The Bind and Unbind functions manage the shader program during the execution, ensuring it is used when needed and releasing it afterward.</p>
+<p>The <code>Dispatch()</code> function sends the compute shader to the GPU for execution, specifying the workgroup size and whether a memory barrier is needed.</p>
+<p>The <code>Bind()</code> and <code>Unbind()</code> functions manage the shader program during the execution, ensuring it is used when needed and releasing it afterward.</p>
 </div>
 <p>Buffer and Texture Management:</p>
 <div class="inset">
-<p>The BindTexture function binds textures to the compute shader, enabling the shader to read from it.</p>
-<p>The GenBuffer function creates a new buffer on the GPU, and BindBuffer is used to upload data to that buffer and bind it for use in the shader.</p>
-<p>The ReadBuffer function allows reading the results of a compute shader from a buffer after execution.</p>
-<p>The DeleteBuffer function ensures buffers are cleaned up when no longer needed.</p>
+<p>The <code>BindTexture()</code> function binds textures to the compute shader, enabling the shader to read from it.</p>
+<p>The <code>GenBuffer()</code> function creates a new buffer on the GPU, and BindBuffer is used to upload data to that buffer and bind it for use in the shader.</p>
+<p>The <code>ReadBuffer()</code> function allows reading the results of a compute shader from a buffer after execution.</p>
+<p>The <code>DeleteBuffer()</code> function allows buffers to be cleaned up when no longer needed.</p>
 </div>
 <p>Uniform Management:</p>
 <div class="inset">
-<p>Uniforms are used to pass values to the shader. The SetUniform functions handle setting various types of uniforms (e.g., float, vector, array) by checking if the uniform data needs updating and then sending it to the GPU.</p>
-<p>The GetUniformLocation function retrieves the location of a uniform in the shader program, caching it for efficiency.</p>
-<p>Additional helper functions like checkUniformMap ensure that uniforms are only updated when their values change, which prevents unnecessary GPU communication and improves performance.</p>
+<p>The <code>SetUniform()</code> functions handle setting various types of uniforms by checking if the uniform data needs updating and then sending it to the GPU.</p>
+<p>The <code>GetUniformLocation()</code> function retrieves the location of a uniform in the shader program, caching it for efficiency.</p>
+<p>Additionally <code>checkUniformMap()</code> ensure that uniforms are only updated when their values change, which prevents unnecessary GPU communication and improves performance.</p>
 </div>
 <p>Error Handling and Debugging:</p>
 <div class="inset">
 <p>The code includes error handling, especially during shader compilation and linking. If errors occur, detailed messages are logged.</p>
-<p>In debug mode, the shader compilation and program linking processes are carefully checked, and failure logs are produced with specific error messages.</p>
+<p>When this code is run in Visual Studio's debug mode, the shader compilation and program linking processes are carefully checked, and failure logs are produced with specific error messages.</p>
 </div>
        </div>
     </div>

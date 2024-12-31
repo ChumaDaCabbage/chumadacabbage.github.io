@@ -84,6 +84,10 @@
 <h2>Overview:</h2>
 <p>This code implements a binary search tree (BST) map, which stores pairs of keys and values to allow operations such as insertion, lookup, deletion, and traversal. The map supports both non-const and const iterators to facilitate interaction with stored elements.</p>
 
+<h2>Showcase Purpose:</h2>
+<p>This code demonstrates my ability to design and implement a complex templated data structure, emphasizing flexibility and modularity. The BST map is fully templated, allowing it to handle a wide range of key-value pair types.</p>
+<p>Additionally, this example highlights my ability in implementing custom iterators for seamless traversal and integration with standard C++ idioms, such as range-based loops and STL-style access patterns.</p>
+
 
 <h2>Details:</h2>
 <p>Node Implementation:</p>
@@ -96,7 +100,7 @@ The node also includes the following helper methods:
 <li><code>Value()</code>: Retrieves or modifies the node's value.</li>
 <li><code>first()</code>: Finds the leftmost node (smallest key).</li>
 <li><code>last()</code>: Finds the rightmost node (largest key).</li>
-<li><code>increment()</code> and <code>decrement</code>: Traverse the tree to find the successor or predecessor node.</li></ul>
+<li><code>increment()</code> and <code>decrement()</code>: Traverse the tree to find the successor or predecessor node.</li></ul>
 </div>
 <p>Iterators:</p>
 <div class="inset">
@@ -114,7 +118,7 @@ The node also includes the following helper methods:
 <li><code>find(KEY_TYPE const& key)</code>: Finds node of passed key in this BSTmap </li>
 <li><code>erase(BSTmap_iterator it)</code>: Erases node at passed iterator from this tree </li>
 <li><code>size()</code>: Gets the number of nodes in this tree </li>
-<p>In addition to this functionality there are essential constructors, assignment operators, and a destructor to handle the tree's lifecycle efficiently. These functions ensure that the tree can be copied, moved, and properly cleaned up.</p>
+<p>In addition to this functionality there are essential constructors, assignment operators, and a destructor to handle the tree's lifecycle correctly. These functions ensure that the tree can be copied, moved, and properly cleaned up.</p>
 </div>
 <p>Helper Functions:</p>
 <div class="inset">

@@ -64,7 +64,7 @@
        	 }
         
          /*********************************************************************
-          * @brief: Binds this buffer for OpenGL rendering
+          * @brief: Binds this shader
          *********************************************************************/
        	 void ComputeShader::Bind() const
        	 {
@@ -156,7 +156,7 @@
        	 }
         
          /*********************************************************************
-          * @brief: Unbinds buffer to stop OpenGL rendering
+          * @brief: Unbinds shader
          *********************************************************************/
        	 void ComputeShader::Unbind() const
        	 {
@@ -184,7 +184,7 @@
        	     }
        	     catch (...)
              {
-       	       KL_ERROR("Compute shader just tried to crash")
+       	       KL_ERROR("Compute shader just tried to crash when setting uniform")
              }
        	   }
        	 }
@@ -222,27 +222,19 @@
          *********************************************************************/ 
        	 void ComputeShader::SetUniform(const std::string& name, std::vector&ltglm::vec2>& input) const
        	 {
-       	   //Convert glm::vec2 to floats
-       	   std::vector&ltfloat> inputFloats;
-       	   for (const glm::vec2& vec : input) 
-       	   {
-       	     inputFloats.push_back(vec.x);
-       	     inputFloats.push_back(vec.y);
-       	   }
-             	 	
-           //Check if data needs to be updated
-       	   if (checkUniformMap(mUniforms, name, inputFloats.data(), inputFloats.size()))
-       	   {
-       	     try
-       	     {
-       	       //Send to opengl
-       	       glUniform2fv(GetUniformLocation(name), inputFloats.size(), inputFloats.data());
-       	     }
-       	     catch (...)
-       	     {
-       	       KL_ERROR("Compute shader just tried to crash when setting uniform")
-       	     }
-       	   }
+           //if data needs to be updated
+           if (checkUniformMap(mUniforms, name, reinterpret_cast&ltfloat*>(input.data()), input.size() * 2))
+           {
+             try
+             {
+               //Send to opengl
+               glUniform2fv(GetUniformLocation(name), input.size() * 2, reinterpret_cast&ltfloat*>(input.data()));
+             }
+             catch (...)
+             {
+               KL_ERROR("Compute shader just tried to crash when setting uniform")
+             }
+           }
        	 }
 
          /*********************************************************************
@@ -254,29 +246,19 @@
          *********************************************************************/
        	 void ComputeShader::SetUniform(const std::string& name, std::vector&ltglm::vec4>& input) const
        	 {
-       	   //Convert glm::vec2 to floats
-       	   std::vector&ltfloat> inputFloats;
-       	   for (const glm::vec4& vec : input)
-       	   {
-       	     inputFloats.push_back(vec.r);
-       	     inputFloats.push_back(vec.g);
-       	     inputFloats.push_back(vec.b);
-       	     inputFloats.push_back(vec.a);
-       	   }
-        
-       	   //Check if data needs to be updated
-       	   if (checkUniformMap(mUniforms, name, inputFloats.data(), inputFloats.size()))
-       	   {
-       	     try
-       	     {
-       	       //Send to opengl
-       	       glUniform4fv(GetUniformLocation(name), inputFloats.size(), inputFloats.data());
-       	     }
-       	     catch (...)
-       	     {
-       	       KL_ERROR("Compute shader just tried to crash when setting uniform")
-       	     }
-       	   }
+           //Check if data needs to be updated
+           if (checkUniformMap(mUniforms, name, reinterpret_cast&ltfloat*>(input.data()), input.size() * 4))
+           {
+             try
+             {
+               //Send to opengl
+               glUniform4fv(GetUniformLocation(name), input.size() * 4, reinterpret_cast&ltfloat*>(input.data()));
+             }
+             catch (...)
+             {
+               KL_ERROR("Compute shader just tried to crash when setting uniform")
+             }
+           }
        	 }
         
          //--------------------------------------------------------------------------------------
@@ -394,7 +376,7 @@
        	   glLinkProgram(program);
         
        #if defined(_DEBUG) || defined(_EDITORRELEASE)
-       	   //Check for sucessfuly linkage
+       	   //Check for successful linkage
        	   GLint isLinked = 0;
        	   glGetProgramiv(program, GL_LINK_STATUS, &isLinked);
        	   if (isLinked == GL_FALSE)
