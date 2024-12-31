@@ -79,7 +79,7 @@
   border-radius: calc(0.5vh + 0.5vw) calc(0.5vh + 0.5vw) 0vh 0vh; 
 
   font-family: CascadiaMono;
-  font-size: calc(0.27vw + 0.08vh + 0.3rem);
+  font-size: calc(0.21vw + 0.065vh + 0.24rem);
 }
 
 .tab
