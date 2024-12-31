@@ -79,13 +79,13 @@
   border-radius: calc(0.5vh + 0.5vw) calc(0.5vh + 0.5vw) 0vh 0vh; 
 
   font-family: CascadiaMono;
-  font-size: calc(0.21vw + 0.065vh + 0.24rem);
+  font-size: calc(0.2vw + 0.065vh + 0.24rem);
 }
 
 .tab
 {
   height: auto;
-  width: min-content;
+  width: auto;
   display: inline-block;
 
   margin-left: 0vw;
@@ -105,8 +105,7 @@
   padding: 1vh;
   color: white;
 
-  width: min-content;
-  white-space: nowrap;
+  width: auto;
 
   transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
@@ -114,7 +113,7 @@
 .tabinactive
 {
   height: auto;
-  width: min-content;
+  width: auto;
   display: inline-block;
 
   margin-left: 0vw;
@@ -140,11 +139,7 @@
 
 .tabinactive .codeTitle
 {
-  padding: 1vh;
   color: gray;
-
-  width: min-content;
-  white-space: nowrap;
 }
 
 .codeDescription
