@@ -68,29 +68,33 @@
    background-color: rgba(1, 1, 0, 0.5);
    color: black;
  }
- .videoContainer .videoImage img 
+ 
+ .videoContainer .videoContent
  {
-  position: absolute; top: 8vw; left: 32vw;
+  border: none;
+  
+  color: white;
+  background-color: transparent; /* Transparent background */
+ 
+  height: auto;
 
-  width: 35vw;
+  position: absolute; top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: calc(30vw + 8vh + 6rem);
+  margin-top: 3vw;
+  height: auto;
+ }
+
+ .videoContainer .videoContent img 
+ {
+  width: calc(30vw + 8vh + 6rem);
 
   padding: 0;
-  margin: 0;
   border: none;
   align-items: center;
-  cursor: pointer;
 }
 
-.videoContainer .videoImage button 
-{
- cursor: pointer;
- border: none;
- 
- color: white;
- background-color: transparent; /* Transparent background */
-}
-
-.videoContainer .videoText button
+.videoContainer .videoContent button
 {
   cursor: pointer;
   border: none;
@@ -98,18 +102,20 @@
   color: white;
   font-family: WebsitePixel;
 
-  width: auto;
+  position: relative; top: 50%; left: 50%; 
+  transform: translate(-50%, -50%);
+  margin-top: 15vw;
 
-  position: absolute; top: 35vw; left: 49.7vw;
-  transform: translate(-50%, -50%); /* Centers the text horizontally and vertically */
-
+  justify-content: center;
   text-align: center;
+  white-space: nowrap;
+
   /*font-size: calc(1.5vw + 0.5vh);*/
   font-size: calc(1.35vw + 0.45vh + 0.25rem);
   line-height: 1.5;
 }
 
-.videoContainer .videoText button:hover 
+.videoContainer .videoContent button:hover 
 {
   background-color: transparent; /* Transparent background */
   opacity: 0.7;
