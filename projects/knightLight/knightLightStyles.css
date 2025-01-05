@@ -42,8 +42,6 @@
   height: 100%;
   position: relative;
   transform: rotate(-25deg);
-  overflow-y: hidden; 
-  overflow-x: hidden; 
 }
 
 .content img 
