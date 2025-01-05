@@ -8,6 +8,7 @@
   transform: scale(1);
   transform-origin: top left;
   background-color: black;
+  overflow-y: hidden;
  }
  body, html 
  {
@@ -21,16 +22,13 @@
    padding: 0;
 
    overflow-x: hidden; /* Prevent horizontal scrolling */
-   overflow-y: hidden; /* Enable vertical scrolling */
  }
 
 .content 
 {
   margin-top: 1vh; 
-
   margin: 0;
   padding: 0;
-
 
   flex-grow: 1;
 
@@ -44,6 +42,8 @@
   height: 100%;
   position: relative;
   transform: rotate(-25deg);
+  overflow-y: hidden; 
+  overflow-x: hidden; 
 }
 
 .content img 
