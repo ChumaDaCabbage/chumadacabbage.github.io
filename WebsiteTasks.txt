@@ -1,2 +1,3 @@
+add more projects to project page
 make knightlight page
-add more projects to project page and make pages for them 
+Make pages for rest of projects
