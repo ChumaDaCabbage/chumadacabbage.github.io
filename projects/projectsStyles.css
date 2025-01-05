@@ -204,9 +204,6 @@
 
 .imageContainer .imageContent .buttonStuff
 {
-  width: calc(15vw + 2vh + 1.5rem);
-  height: calc((15vw + 2vh + 1.5rem) * 0.4647519582);
-  
   position: relative; left: 50%; 
   transform: translateX(-50%);
   justify-content: center;
