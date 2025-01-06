@@ -64,7 +64,7 @@
            * @param  filePath: Path of file to read in
            * @return All characters of the file in a vector
           *********************************************************************/
-          std::string ReadShader(const std::string& filePath)
+          std::string ComputePipeline::ReadShader(const std::string& filePath)
           {
             //Read file,       path,     start at end,   read as binaryCompile Shaders
             std::ifstream file{filePath, std::ios::ate | std::ios::binary};
@@ -99,7 +99,7 @@
           * @param  code: Code to create shader with
           * @param  shaderModule: Gets set to created shader module
          *********************************************************************/
-         void CreateShaderModule(Device& device, const std::vector<uint32_t>& code, VkShaderModule* shaderModule)
+         void ComputePipeline::CreateShaderModule(Device& device, const std::vector<uint32_t>& code, VkShaderModule* shaderModule)
          {
            //Struct to hold information on how to create this shader module
            VkShaderModuleCreateInfo createInfo{};

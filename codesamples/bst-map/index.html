@@ -87,34 +87,34 @@
       </div>
       <div class = "codeDescription">
 <h2>Overview:</h2>
-<p>This code implements a binary search tree (BST) map, which stores pairs of keys and values to allow operations such as insertion, lookup, deletion, and traversal. The map supports both non-const and const iterators to facilitate interaction with stored elements.</p>
+<p>This code implements a binary search tree (BST) map. This BST stores data as pairs of keys and values and allows operations such as insertion, lookup, deletion and traversal. The map supports both non-constant and constant iterators to facilitate interaction with stored elements.</p>
 
 <h2>Showcase Purpose:</h2>
-<p>This code demonstrates my ability to design and implement a complex templated data structure, emphasizing flexibility and modularity. The BST map is fully templated, allowing it to handle a wide range of key-value pair types.</p>
-<p>Additionally, this example highlights my ability in implementing custom iterators for seamless traversal and integration with standard C++ idioms, such as range-based loops and STL-style access patterns.</p>
+<p>This sample demonstrates my ability to design and implement a complex templated data structure, emphasizing flexibility and modularity. The BST map is fully templated, allowing it to handle a wide range of key-value pair types.</p>
+<p>Additionally, this example highlights my ability to implement custom iterators for seamless traversal. The implementation allows utilization by standard C++ idioms, such as range-based loops and STL-style access patterns.</p>
 
 
 <h2>Details:</h2>
 <p>Node Implementation:</p>
 <div class="inset">
-<p>Each node stores a key, a value, pointers to its parent, left child, and right child.
+<p>Each node stores a key, a value, pointers to its parent, left child and right child.
 
 The node also includes the following helper methods:
 </p>
-<ul><li><code>Key()</code>: Retrieves the node's key.</li>
-<li><code>Value()</code>: Retrieves or modifies the node's value.</li>
-<li><code>first()</code>: Finds the leftmost node (smallest key).</li>
-<li><code>last()</code>: Finds the rightmost node (largest key).</li>
-<li><code>increment()</code> and <code>decrement()</code>: Traverse the tree to find the successor or predecessor node.</li></ul>
+<ul><li><code>Key()</code>: Retrieves the node's key</li>
+<li><code>Value()</code>: Retrieves or modifies the node's value</li>
+<li><code>first()</code>: Finds the leftmost node (smallest key)</li>
+<li><code>last()</code>: Finds the rightmost node (largest key)</li>
+<li><code>increment()</code> and <code>decrement()</code>: Traverse the tree to find the successor or predecessor node</li></ul>
 </div>
 <p>Iterators:</p>
 <div class="inset">
-<p>Non-const iterators allow modification of elements, while const iterators provide read-only access.</p>
+<p>Non-constant iterators allow modification of elements, while constant iterators provide read-only access.</p>
 <p>Supports standard operations:</p>
-<ul><li>Increment (both prefix and postfix).</li>
+<ul><li>Increment (both prefix and postfix)</li>
 <li>Assignment operations for when not dereferenced</li>
-<li>Dereference (* and ->) to access or modify node content.</li>
-<li>Equality and inequality comparisons.</li></ul>
+<li>Dereference (* and ->) to access or modify node content</li>
+<li>Equality and inequality comparisons</li></ul>
 </div>
 <p>Core BST Functions:</p>
 <div class="inset">
@@ -123,17 +123,17 @@ The node also includes the following helper methods:
 <li><code>find(KEY_TYPE const& key)</code>: Finds node of passed key in this BSTmap </li>
 <li><code>erase(BSTmap_iterator it)</code>: Erases node at passed iterator from this tree </li>
 <li><code>size()</code>: Gets the number of nodes in this tree </li>
-<p>In addition to this functionality there are essential constructors, assignment operators, and a destructor to handle the tree's lifecycle correctly. These functions ensure that the tree can be copied, moved, and properly cleaned up.</p>
+<p>In addition to this functionality there are essential constructors, assignment operators and a destructor to handle the tree's lifecycle correctly. These functions ensure that the tree can be copied, moved and properly cleaned up.</p>
 </div>
 <p>Helper Functions:</p>
 <div class="inset">
 <p>To assist with the functionality of the BST, there are a variety of private helper functions designed to manage the tree’s structure and support core operations</p>
-<ul><li><code>findNode(KEY_TYPE const& key, Node** last = NULL)</code>: Handles finding nodes in the tree, is used by <code>find</code> and <code>insert</code></li>
+<ul><li><code>findNode(KEY_TYPE const& key, Node** last = NULL)</code>: Handles finding nodes in the tree, used by <code>find</code> and <code>insert</code></li>
 <li><code>addNode(Node* nodeToAddFrom, Node* nodeToAdd)</code>: Handles adding nodes to the tree, sets to root if needed </li>
 <li><code>freeNode(Node** node)</code>: Frees the memory of the passed node</li>
 <li><code>updateParent(Node* oldChild, Node* newChild)</code>: Handles swapping out children of a parent while handling edge cases</li>
 <li><code>freeAll(Node** node)</code>: Frees passed node and all its children, used to clean up trees</li>
-<li><code>addAll(Node* node, Node* lastNode = NULL)</code>: Copies passed node and all of it's children into this tree, used for copying trees</li></ul>
+<li><code>addAll(Node* node, Node* lastNode = NULL)</code>: Copies passed node and all of its children into this tree, used for copying trees</li></ul>
 </div>
       </div>
     </div>

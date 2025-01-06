@@ -1,3 +1,4 @@
-add more projects to project page
+add last two projects to project page
+arrow to prompt scroll on project page
 make knightlight page
 Make pages for rest of projects
