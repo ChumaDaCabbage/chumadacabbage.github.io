@@ -77,10 +77,10 @@
             }
 
             //Get file size (tellg gets last position, which is end since we started there)
-            size_t fileSize = static_cast<size_t>(file.tellg());
+            size_t fileSize = static_cast&ltsize_t>(file.tellg());
 
             //Make a vector big enough to hold full file
-            std::vector<char> buffer(fileSize);
+            std::vector&ltchar> buffer(fileSize);
 
             //Go back to start of file and read whole file into vector
             file.seekg(0);
@@ -99,7 +99,7 @@
           * @param  code: Code to create shader with
           * @param  shaderModule: Gets set to created shader module
          *********************************************************************/
-         void ComputePipeline::CreateShaderModule(Device& device, const std::vector<uint32_t>& code, VkShaderModule* shaderModule)
+         void ComputePipeline::CreateShaderModule(Device& device, const std::vector&ltuint32_t>& code, VkShaderModule* shaderModule)
          {
            //Struct to hold information on how to create this shader module
            VkShaderModuleCreateInfo createInfo{};
@@ -111,7 +111,7 @@
            createInfo.codeSize = code.size() * sizeof(uint32_t);
 
            //Set pointer to code (cast from array of chars to a int32 pointer)
-           createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
+           createInfo.pCode = reinterpret_cast&ltconst uint32_t*>(code.data());
 
            //Create the shader module
            if (vkCreateShaderModule(device.GetDevice(), &createInfo, nullptr, shaderModule) != VK_SUCCESS)
