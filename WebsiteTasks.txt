@@ -1,4 +1,4 @@
-add last two projects to project page
-arrow to prompt scroll on project page
 make knightlight page
+arrow to prompt scroll on project page
+make contact info shake?
 Make pages for rest of projects
