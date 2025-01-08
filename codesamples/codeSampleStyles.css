@@ -154,6 +154,7 @@
   font-size: calc(0.50vw + 0.15vh + 0.35rem);
   color: white;
   white-space: pre-wrap;
+  line-height: 1.25
 }
 
 .codeDescription ul 

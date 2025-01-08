@@ -10,11 +10,11 @@
     <title>Evan Gray | KnightLight</title>
 
     <!-- Link to the external stylesheets -->
-    <link rel="stylesheet" type="text/css" href="knightLightStyles.css">
+    <link rel="stylesheet" type="text/css" href="/projects/knightlight/knightLightStyles.css">
     <link rel="stylesheet" type="text/css" href="/headerStyles.css">
     <link rel="stylesheet" type="text/css" href="/footerStyles.css">
     <link rel="stylesheet" type="text/css" href="/fonts.css">
-    
+
     <!-- Set icon -->
     <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
 
@@ -22,7 +22,9 @@
     <script type="text/javascript" src="/functions.js"></script>
 
     <!-- Load footer into this file-->
-    <script> window.onload = function() 
+    <!-- Also Load code snippets on page load and run prettify on them -->
+    <script> 
+      window.onload = function() 
       {
         loadHTML('/footer.html');
       }; 
@@ -35,28 +37,41 @@
 
   <body>
     <!-- ~~~~~~~~~~~Header~~~~~~~~~~~ -->
-    <div class = "header" style = "background-color: black;">
+    <div class = "header" style="background-color: black;">
       <div class = "title">
         Evan Gray       
       </div>
       <div class = "buttons">
-        <button class= " button" onclick = "window.location.href = '/'">Projects</button>
+        <button class= " button" onclick = "location.reload()">Projects</button>
         <button class= " button" onclick = "window.location.href = '/resume/'">Resume</button>
         <button class= " button" onclick = "window.location.href = '/codesamples/'">Code Samples</button>
         <button class= " button" onclick = "window.location.href = '/about/'">About</button>
-        <button class= " button" onclick = "highlightInfo()">Contact</button>
+        <button class= " button" onclick = "scrollToFooter()">Contact</button>
+      </div>
+      <hr class="header-line">
+    </div>
+
+    <!-- ~~~~~~~~~~~Code Sample~~~~~~~~~~~ -->
+    <div class = "content">
+      <div class = "mediaSection">
+        <div class = "media">
+          <iframe width="100%" height="515" src="https://www.youtube.com/embed/8KWFWvNyhOw"> </iframe>
+          <p></p>
+          <iframe src="https://store.steampowered.com/widget/3086850/" frameborder="0" width="100%" height="190"></iframe>
+          <img src = "/media/KnightLight_3.png" alt = "KnightLight screenshot" class = "mediaImage">
+          <img src = "/media/KnightLight_1.png" alt = "KnightLight screenshot" class = "mediaImage">
+          <img src = "/media/KnightLight_2.png" alt = "KnightLight screenshot" class = "mediaImage">
+        </div>
+      </div>
+
+      <div class = "gameDescription">
+<p>KnightLight is a tile-based 2D puzzle-platformer where you light your way through the darkness. This game was developed during my sophomore GAM 200-250 courses at DigiPen Institute of Technology. Which is designed to create collaboration between designers and programmers in creating a C++ custom engine. Our programming team built the engine using Dear ImGui for its structure, integrating a wide range of features and components based on the designers’ needs.</p>
+<p> PAGE UNDER CONSTRUCTION, MORE TO COME SOON </p>
       </div>
     </div>
 
-    <!-- ~~~~~~~~~~~KnightLight~~~~~~~~~~~ -->
-    <div class = "content">
-      <img src="/media/CautionTape.png" alt="CautionTape">
-      <img src="/media/CautionTape.png" alt="CautionTape">
-      <div class="textoverlay"><p>UNDER&nbsp CONSTRUCTION</p></div>
-    </div>
-
     <!-- ~~~~~~~~~~~Footer~~~~~~~~~~~~ -->
-    <div class = "footerLoadingZone" id="/footer.html" style = "background-color: black;">
+    <div class = "footerLoadingZone" id="/footer.html">
       <!--Footer will get autoloaded here :D -->
     </div>
   </body>
