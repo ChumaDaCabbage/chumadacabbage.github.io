@@ -1,3 +1,14 @@
+function isElementOnScreen(element) 
+{
+  const rect = element.getBoundingClientRect();
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  return (
+    rect.top < windowHeight && rect.bottom > 0 && //Element is vertically within the viewport
+    rect.left < windowWidth && rect.right > 0    //Element is horizontally within the viewport
+  );
+}
 //Function to scroll to contact section
 function scrollToFooter() 
 {
@@ -7,13 +18,26 @@ function scrollToFooter()
   //Highlight the text elements in the footer
   const textElements = document.querySelectorAll('.footer .contactInfo .item');
   
-  textElements.forEach((textElement) => 
+  if(isElementOnScreen(footerElement))
   {
-    textElement.classList.add('highlight');
-    
-    //Remove the highlight class after a delay (1 second)
-    setTimeout(() => {textElement.classList.remove('highlight');}, 1000);
-  });
+    textElements.forEach((textElement) => 
+    {
+      textElement.classList.add('highlightShake');
+      
+      //Remove the highlight class after a delay (1 second)
+      setTimeout(() => {textElement.classList.remove('highlightShake');}, 1000);
+    });
+  }
+  else
+  {
+    textElements.forEach((textElement) => 
+    {
+      textElement.classList.add('highlight');
+        
+      //Remove the highlight class after a delay (1 second)
+      setTimeout(() => {textElement.classList.remove('highlight');}, 1000);
+    }); 
+  }
 }
 
 function highlightInfo() 

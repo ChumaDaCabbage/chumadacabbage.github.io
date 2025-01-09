@@ -46,7 +46,8 @@
     /*font-size: calc(0.75vw + 0.25vh);*/
     font-size: calc(0.6vw + 0.2vh + 0.4rem);
     overflow-x: hidden;
-    white-space: nowrap
+    white-space: nowrap;
+    overflow-y: hidden;
   }
 
   .footer .contactInfo .item
@@ -55,10 +56,26 @@
     align-items: center;
     transition: color 0.5s ease-out;
     word-spacing: 0;
+    overflow-y: hidden;
+  }
+
+  @keyframes shake 
+  {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(2deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0); }
   }
 
   .highlight 
   {
+    color: yellow; /* Change text color to highlight */
+  }
+
+  .highlightShake 
+  {
+    animation: shake 1s ease-in-out;
     color: yellow; /* Change text color to highlight */
   }
 
