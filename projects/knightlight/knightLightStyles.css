@@ -24,6 +24,13 @@
    overflow-y: auto; /* Enable vertical scrolling */
  }
 
+h1, h2, h3 
+{
+  margin: 0;
+  margin-top: 1vw;
+  padding: 0;
+}
+
 .content
 {
   display: flex;
@@ -35,7 +42,7 @@
 .mediaSection
 {
   height: auto; /* Adjust height dynamically based on content */
-  width: 50%; /* Set width to 50% of the screen */
+  width: 40%; /* Set width to 50% of the screen */
   padding: 1vw 1vh; /* Add padding inside the box */
   margin-top: 0.1vh;
   margin-bottom: 3vh;
@@ -62,19 +69,39 @@
   height: auto;
 }
 
+.bold
+{
+  font-size: calc((0.50vw + 0.15vh + 0.35rem) * 1.3);
+  font-weight: bold;
+}
+.boldmini
+{
+  font-weight: bold;
+}
+
+.italics
+{
+  font-style: italic;
+}
+
 .gameDescription
 {
-  width: 50%;
+  width: 60%;
   font-family: CascadiaMono;
   margin-left: 1vw;
   margin-right: 1.5vw;
   margin-top: 1vw;
   margin-bottom: 0;
-  font-size: calc(0.75vw + 0.25vh);
   font-size: calc(0.50vw + 0.15vh + 0.35rem);
   color: white;
-  white-space: pre-wrap;
   line-height: 1.5;
+}
+
+.gameDescriptionImage
+{
+  position: relative;
+  float: right;
+  height: auto;
 }
 
 .gameDescription ul 
@@ -90,16 +117,6 @@
   margin-left: 2vw;
 }
 
-.gameDescription .inset
-{
-  margin-left: 1vw;
-}
-
-.gameDescription .inset .insetDeep
-{
-  margin-left: 2vw;
-}
-
 .gameDescription h3 
 {
   margin: 0 0;
@@ -111,9 +128,4 @@
 .gameDescription ul 
 {
   margin: 0 0;
-}
-.gameDescription code 
-{
-  margin: 0 0;
-  font-family: "Courier New", Courier, monospace;
 }
