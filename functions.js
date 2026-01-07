@@ -125,6 +125,7 @@ async function loadPageDefualts(hasFooter = true)
   await loadHTML('/header.html', "start");
   await loadHTML('/globalDefaults.html', "start");
   if (hasFooter) await loadHTML('/footer.html', "end");
+  document.body.removeChild(document.getElementById('loading-overlay'));
 }
 
 // //Set y offset based off another elements height
