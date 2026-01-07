@@ -1,29 +1,26 @@
-|-----------------------------------------------|
-|  _______        _         _      _     _      |
-| |__   __|      | |       | |    (_)   | |     |
-|    | | ___   __| | ___   | |     _ ___| |_    |
-|    | |/ _ \ / _` |/ _ \  | |    | / __| __|   |
-|    | | (_) | (_| | (_) | | |____| \__ \ |_    |
-|    |_|\___/ \__,_|\___/  |______|_|___/\__|   |
-|-----------------------------------------------|
+Tasks--------------------------------------
 
 -Rename contact button?
 -Fix path and title of contact page (currently in old about page)
 
 -Remove loading blocker?
--Make so footer is sticky?
 
--Make so text get loaded from text files
-
+---NEW HOME PAGE-----------------------------------------------------------------------------------------------------
 -Make new home page (showcase tab)
+-Say graphics programer somewhere on home page?
 -Make voiceover videos showing off junior/senior year work in showcase tab
 
+---RESUME------------------------------------------------------------------------------------------------------------
 -Add slang and nvidia insights to resume
 -Add finished raytracer to resume
 -Gpu profile raytracer and add that to resume
 
--Update code samples?
+---WRITING-----------------------------------------------------------------------------------------------------------
+-Update code samples
 -Run code sample through static analysis
 
+-Make so text gets loaded from text files for eazy editing
 -Rewrite about and code sample page text
 -Rewrite cover letter
+
+-Fill out old projects with minimil stuff (since not foucs)
