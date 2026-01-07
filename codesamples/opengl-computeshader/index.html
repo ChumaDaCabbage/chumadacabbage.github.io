@@ -7,32 +7,20 @@
   <!-- ------------------------------------Head------------------------------------ -->
   <!-- ---------------------------------------------------------------------------- -->
   <head>
+    <!-- Connect javascript functions and setup page-->
+    <script type="text/javascript" src="/functions.js"></script>
+    <script> window.addEventListener('load', function() {loadPageDefualts();}); </script>
+
     <title>Evan Gray | Code Samples</title>
 
     <!-- Link to the external stylesheets -->
     <link rel="stylesheet" type="text/css" href="/codesamples/codeSampleStyles.css">
-    <link rel="stylesheet" type="text/css" href="/headerStyles.css">
-    <link rel="stylesheet" type="text/css" href="/footerStyles.css">
-    <link rel="stylesheet" type="text/css" href="/fonts.css">
-
-    <!-- Set icon -->
-    <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
-
-    <!-- Connect javascript functions -->
-    <script type="text/javascript" src="/functions.js"></script>
 
     <!-- Link to the google code-prettify library styles -->
     <script type="text/javascript" src="/googlePrettify/prettify.js"></script>
 
-    <!-- Load footer into this file-->
-    <!-- Also Load code snippets on page load and run prettify on them -->
-    <script> 
-      window.onload = function() 
-      {
-        loadCode('computeshader.cpp');
-        loadHTML('/footer.html');
-      }; 
-    </script>
+    <!-- Load code snippets on page load and run prettify on them -->
+    <script>  window.addEventListener('load', function() {loadCode('computeshader.cpp');}); </script>
   </head>
 
   <!-- ---------------------------------------------------------------------------- -->
@@ -40,21 +28,6 @@
   <!-- ---------------------------------------------------------------------------- -->
 
   <body>
-    <!-- ~~~~~~~~~~~Header~~~~~~~~~~~ -->
-    <div class = "header" style="background-color: black;">
-      <div class = "title">
-        Evan Gray       
-      </div>
-      <div class = "buttons">
-        <button class= " button" onclick = "window.location.href = '/'">Projects</button>
-        <button class= " button" onclick = "window.location.href = '/resume/'">Resume</button>
-        <button class= " button" onclick = "location.reload()">Code Samples</button>
-        <button class= " button" onclick = "window.location.href = '/about/'">About</button>
-        <button class= " button" onclick = "scrollToFooter()">Contact</button>
-      </div>
-      <hr class="header-line">
-    </div>
-
     <!-- ~~~~~~~~~~~Tabs~~~~~~~~~~ -->
     <div class = "tabrow">
       <button class = "tab" onclick = "location.reload()">
@@ -125,11 +98,6 @@
 <p>When this code is run in Visual Studio's debug mode, the shader compilation and program linking processes are carefully checked and failure logs are produced with specific error messages.</p>
 </div>
        </div>
-    </div>
-
-    <!-- ~~~~~~~~~~~Footer~~~~~~~~~~~~ -->
-    <div class = "footerLoadingZone" id="/footer.html">
-      <!--Footer will get autoloaded here :D -->
     </div>
   </body>
 </html>

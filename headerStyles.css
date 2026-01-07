@@ -5,6 +5,8 @@
 /* Header */
 .header 
 {
+  background-color: black;
+  
   position: sticky; top: 0; left: 0;
   width: 98.1%;
 

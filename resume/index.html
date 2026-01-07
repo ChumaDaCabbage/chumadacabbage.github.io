@@ -7,26 +7,14 @@
   <!-- ------------------------------------Head------------------------------------ -->
   <!-- ---------------------------------------------------------------------------- -->
   <head>
+    <!-- Connect javascript functions and setup page-->
+    <script type="text/javascript" src="/functions.js"></script>
+    <script> window.addEventListener('load', function() {loadPageDefualts();}); </script>
+
     <title>Evan Gray | Resume</title>
 
     <!-- Link to the external stylesheets -->
     <link rel="stylesheet" type="text/css" href="resumeStyles.css">
-    <link rel="stylesheet" type="text/css" href="/headerStyles.css">
-    <link rel="stylesheet" type="text/css" href="/footerStyles.css">
-    <link rel="stylesheet" type="text/css" href="/fonts.css">
-
-    <!-- Set icon -->
-    <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
-
-    <!-- Connect javascript functions -->
-    <script type="text/javascript" src="/functions.js"></script>
-
-    <!-- Load footer into this file-->
-    <script> window.onload = function() 
-      {
-        loadHTML('/footer.html');
-      }; 
-    </script>
   </head>
 
   <!-- ---------------------------------------------------------------------------- -->
@@ -34,29 +22,9 @@
   <!-- ---------------------------------------------------------------------------- -->
 
   <body>
-    <!-- ~~~~~~~~~~~Header~~~~~~~~~~~ -->
-    <div class = "header">
-      <div class = "title">
-        Evan Gray       
-      </div>
-      <div class = "buttons">
-        <button class= " button" onclick = "window.location.href = '/'">Projects</button>
-        <button class= " button" onclick = "location.reload()">Resume</button>
-        <button class= " button" onclick = "window.location.href = '/codesamples/'">Code Samples</button>
-        <button class= " button" onclick = "window.location.href = '/about/'">About</button>
-        <button class= " button" onclick = "scrollToFooter()">Contact</button>
-      </div>
-    </div>
-
     <!-- ~~~~~~~~~~~Resume~~~~~~~~~~~ -->
-
     <div class = "resume">
       <iframe src="../media/EvanGrayResume.pdf" style="width: 100%;height: 100%;border: none;"></iframe>
-    </div>
-
-    <!-- ~~~~~~~~~~~Footer~~~~~~~~~~~~ -->
-    <div class = "footerLoadingZone" id="/footer.html">
-      <!--Footer will get autoloaded here :D -->
     </div>
   </body>
 </html>

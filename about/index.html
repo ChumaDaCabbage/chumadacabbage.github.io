@@ -7,18 +7,14 @@
   <!-- ------------------------------------Head------------------------------------ -->
   <!-- ---------------------------------------------------------------------------- -->
   <head>
+    <!-- Connect javascript functions and setup page-->
+    <script type="text/javascript" src="/functions.js"></script>
+    <script> window.addEventListener('load', function() {loadPageDefualts(false);}); </script>
+
     <title>Evan Gray | About</title>
 
     <!-- Link to the external stylesheets -->
     <link rel="stylesheet" type="text/css" href="aboutStyles.css">
-    <link rel="stylesheet" type="text/css" href="/headerStyles.css">
-    <link rel="stylesheet" type="text/css" href="/fonts.css">
-
-    <!-- Set icon -->
-    <link rel="icon" type="image/x-icon" href="/media/favicon.ico">
-
-    <!-- Connect javascript functions -->
-    <script type="text/javascript" src="/functions.js"></script>
   </head>
 
   <!-- ---------------------------------------------------------------------------- -->
@@ -26,25 +22,10 @@
   <!-- ---------------------------------------------------------------------------- -->
 
   <body>
-    <!-- ~~~~~~~~~~~Header~~~~~~~~~~~ -->
-    <div class = "header">
-      <div class = "title">
-        Evan Gray       
-      </div>
-      <div class = "buttons">
-        <button class= " button" onclick = "window.location.href = '/'">Projects</button>
-        <button class= " button" onclick = "window.location.href = '/resume/'">Resume</button>
-        <button class= " button" onclick = "window.location.href = '/codesamples/'">Code Samples</button>
-        <button class= " button" onclick = "location.reload()">About</button>
-        <button class= " button" onclick = "highlightInfo()">Contact</button>
-      </div>
-    </div>
-
     <!-- ~~~~~~~~~~~About me~~~~~~~~~~ -->
-
     <div class = "aboutContainer">
       <div class = "aboutOther">
-        <img src="/media/EvanG.png" alt="My Face" />
+        <!--img src="/media/EvanG.png" alt="My Face" /-->
         <div class = "item">
           <img src="/media/LinkedInLogo.png" alt="LinkedInLogo" style="width: calc(1.8vw + 0.4rem); border: none; margin-left: 3vw;"/>
           <p>&ensp;<a href="https://www.linkedin.com/in/evanpatrickgray" style="text-decoration: none; color: inherit;">www.linkedin.com/in/evanpatrickgray</a>&emsp;</p>
@@ -53,10 +34,10 @@
           <img src="/media/EmailIcon.png" alt="Email" style="width: calc(1.8vw + 0.4rem); border: none; margin-left: 3vw;"/>
           <p>&ensp;<a href="mailto:evanpgray.work@gmail.com" style="text-decoration: none; color: inherit;">evanpgray.work@gmail.com</a>&emsp;</p>
         </div>
-        <!-- <div class = "item">
+        <div class = "item">
           <img src="/media/PhoneIcon.png" alt="Phone" style="width: calc(1.8vw + 0.4rem); border: none; margin-left: 2vw;"/>
-          <p>&ensp;+0 (000) 000-0000</p>
-        </div> -->
+          <p>&ensp;+1 (425) 213-7629</p>
+        </div>
       </div>
       <div class = "aboutText">
 <p>I am currently pursuing a Bachelor of Science in Computer Science in Real-Time Interactive Simulation at DigiPen Institute of Technology.</p>

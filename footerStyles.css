@@ -4,6 +4,8 @@
   /* Footer */
   .footer 
   {
+    background-color: black;
+    
     position: relative; bottom: 0; left: 50%;
     transform: translateX(-50%); /* Centers the footer horizontally */
     width: 95%;
