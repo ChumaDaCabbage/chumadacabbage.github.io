@@ -1,0 +1,95 @@
+/* ------------------------------------------------------------------------------ */
+/* -------------------------------Showcase Styles-------------------------------- */
+/* ------------------------------------------------------------------------------ */
+
+
+body 
+{
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Container for all projects */
+.projects 
+{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+/* Each project section */
+.project 
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+  background: rgb(24, 24, 24);
+  overflow: hidden;
+
+  border: 0.01vw solid white; /* White border */
+  border-radius: 0.0vw; /* Rounded corners */
+}
+
+/* Text area */
+.project-text 
+{
+  flex: 1;
+  padding: 30px;
+  min-width: 300px;
+}
+.project-text h2 
+{
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.project-text p 
+{
+  font-size: 18px;
+  color: #555;
+}
+
+/* Video container */
+.project-video 
+{
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+  position: relative;
+}
+.project-video iframe 
+{
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Alternate layout: video on right */
+.project.reverse 
+{
+  flex-direction: row-reverse;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) 
+{
+  .project 
+  {
+    flex-direction: column;
+  }
+  .project-video 
+  {
+    height: 250px;
+  }
+  .project-text h2 
+  {
+    font-size: 24px;
+  }
+  .project-text p 
+  {
+    font-size: 16px;
+  }
+}

@@ -10,7 +10,10 @@
 -Rename contact button?
 -Fix path and title of contact page (currently in old about page)
 
+-Remove loading blocker?
 -Make so footer is sticky?
+
+-Make so text get loaded from text files
 
 -Make new home page (showcase tab)
 -Make voiceover videos showing off junior/senior year work in showcase tab
