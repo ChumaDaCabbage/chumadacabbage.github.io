@@ -59,7 +59,7 @@
   color: white;
   background-color: transparent; /* Transparent background */
   /*font-size: calc(0.75vw + 0.25vh);*/
-  font-size: calc(0.54vw + 0.18vh + 0.36rem);
+  font-size: calc(0.65vw + 0.18vh + 0.36rem);
   font-family: CascadiaMono;
 }
 .header .button:hover 

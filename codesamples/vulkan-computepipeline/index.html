@@ -46,11 +46,11 @@
           <h1>Vulkan Compute Pipeline</h1>
         </div>
       </button>
-      <button class = "tabinactive" onclick = "window.location.href = '/codesamples/bst-map'">
+      <!-- <button class = "tabinactive" onclick = "window.location.href = '/codesamples/bst-map'">
         <div class = "codeTitle">
           <h1>Binary Search Tree Map</h1>
         </div>
-      </button>
+      </button> -->
     </div>
     <hr style="width: 96.9%; margin-top: 0; margin-bottom: -0.2vh; margin-left: 1.5vw;">
 
@@ -61,27 +61,11 @@
       </div>
       <div class = "codeDescription">
 <h2>Overview:</h2>
-<p>This code provides an abstraction for managing compute pipelines with the Vulkan API. It integrates functionality for setting up compute shader modules, creating the pipeline/pipeline layouts and binding the resources for use. This enables easy interaction with Vulkan's low-level pipeline architecture for developers.</p>
+<p>This code provides an abstraction for managing compute pipelines though the Vulkan API. It integrates functionality for setting up compute shader modules, creating the pipeline/pipeline layouts and binding the resources for use. This enables easy interaction with Vulkan's compute shader architecture for developers.</p>
 
 
 <h2>Showcase Purpose:</h2>
 <p>The purpose of this sample is to demonstrate my ability to work with the Vulkan API, focusing on compute pipelines and its shaders. Shader module creation, pipeline layout configuration and pipeline creation are streamlined by creating an abstraction layer for the compute pipeline.</p>
-
-
-<h2>Details:</h2>
-<p>Shader Creation:</p>
-<div class="inset">
-<p>Shader Source Reading: The <code>ReadShader()</code> function reads the shader source code from a file and returns it as a string.</p>
-<p>Shader Module Creation: The <code>CreateShaderModule()</code> function takes SPIR-V code as input and creates a Vulkan shader module.</p>
-</div>
-<p>Pipeline Layout Setup:</p>
-<div class="inset">
-<p>The <code>CreatePipelineLayout()</code> function initializes the Vulkan <code>VkPipelineLayout</code> object using the descriptor set layouts from the uniforms. It handles errors if layout creation fails.</p>
-<p>While the descriptor set layouts are being put into a vector, the uniforms are also assigned binding indices.</p>
-</div>
-<p>Compute Pipeline Creation:</p>
-<div class="inset">
-<p><code>CreatePipeline()</code> function performs the following: <ul><li>Verifies that a pipeline layout exists</li><li>Reads and compiles the compute shader source code into SPIR-V, which is then made into a shader module</li><li>Sets up the shader stage information using Vulkan structures</li><li>Creates the compute pipeline using Vulkan's <code>vkCreateComputePipelines</code></li></ul></p></div>
       </div>
     </div>
   </body>

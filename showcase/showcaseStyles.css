@@ -14,7 +14,6 @@ body
 /* Container for all projects */
 .projects 
 {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 50px 20px;
 }
@@ -23,41 +22,41 @@ body
 .project 
 {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 25px;
+  margin-top: 25px;
   flex-wrap: wrap;
-  background: rgb(24, 24, 24);
   overflow: hidden;
-
-  border: 0.01vw solid white; /* White border */
-  border-radius: 0.0vw; /* Rounded corners */
 }
 
 /* Text area */
 .project-text 
 {
+  font-family: 'CascadiaMono';
   flex: 1;
-  padding: 30px;
-  min-width: 300px;
+  margin-left: 0.3vw;
+  margin-right: 0.3vw;
 }
 .project-text h2 
 {
+  font-family: 'CascadiaMono';
+  color: white;
   margin-bottom: 20px;
-  font-size: 28px;
+  font-size: 2vw;
 }
 .project-text p 
 {
-  font-size: 18px;
-  color: #555;
+  font-size: 1vw;
+  color: white;
 }
 
 /* Video container */
 .project-video 
 {
+  margin: 30px;
   flex: 1;
-  min-width: 300px;
-  height: 400px;
+  height: 30vw;
   position: relative;
 }
 .project-video iframe 

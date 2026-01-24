@@ -72,7 +72,7 @@
             Our team <span class = "italics">Luminosity</span>, which we named after the game’s premise, consisted of five programmers and two designers. 
             Of which I was the producer and sole graphics programmer.<br />
             <br />
-            Our programming team built an engine using Dear ImGui for its structure, integrating a wide range of features and components based 
+            Our programming team built an engine using Dear ImGui for its structure, allowing us to support a wide range of features based 
             on the designers’ needs. I personally handled the rendering requirements for this engine. <br />
             <br /> 
           </p>
@@ -82,26 +82,25 @@
           <h2>Semester 1: Building the Graphics Foundation</h2>
           <p>
             <br /> 
-            In the first semester, my efforts were concentrated on developing the foundational graphics components and optimizing the rendering system. 
-            Ensuring the stability and scalability of the graphical features to support further development. <br /> 
+            In the first semester, my efforts were concentrated on developing the highest priority graphics components and optimizing the rendering system. 
+            So I could ensure the stability and scalability of the pipeline for further development. <br /> 
             <br /> 
-            <span class = "bold">Rendering System Development:</span> My first steps in the project were to design and implement the initial rendering pipeline 
-            using OpenGL. This included setting up the rendering of basic sprites, tilemaps, and other needed visual elements to get the project up and running. 
-            For example, one of the first things I made was the sprite component shown below.<br />
+            My first steps in the project were to design and implement the initial rendering pipeline using OpenGL. This included setting up the rendering 
+            of basic sprites, tilemaps, and other required visual elements to get the project up and running. For example, one of the first things I made was 
+            the sprite component shown below.<br />
             <br />
           </p>
           <img src = "/media/Sprites.png" alt = "Sprite component screenshot" class = "gameDescriptionImage"  style = "width: 100%; margin-bottom: 3%;">   
           <p>
             <img src = "/media/DebugDrawing.png" alt = "Debug drawing screenshot" class = "gameDescriptionImage"  style = "width: 40%; float: right; margin-left: 1vw;">   
-            <span class = "bold">Debugging Tools:</span> During this time I also created tools to visualize info and debug issues, such as bounding boxes and 
-            light source icons, which streamlined development for the entire team. This was especially used by our physics programmer, who used these debugging 
-            tools extensively to fix issues in the collision code. <br />
+            During this time I also created tools to visualize info and debug issues, such as bounding boxes and light source icons, which was very helpful for fixing issues  
+            throughout development. This was especially used by our physics programmer, who used these debugging tools extensively to fix issues in the collision code. <br />
             <br />
             <br />
             <span class = "bold">Lighting System Failed Attempt:</span> Near the end of the first semester I began working on the development of 
-            our lighting system, an integral part of <span class = "italics">KnightLight</span>. I conducted extensive research into 2D lighting algorithms created by others, aiming to find one 
-            that aligned with our visual goals and technological constraints. While most algorithms fell short, either visually or technically, I eventually discovered 
-            one that seemed like a good fit. <br />
+            our lighting system, an vital part of <span class = "italics">KnightLight</span>. I did a lot of research into 2D lighting algorithms created by others, looking 
+            to find one that satisfied our visual goals and technological constraints. While most algorithms fell short, either visually or technically, I eventually 
+            discovered one that seemed like a good fit. <br />
             <br />
             <img src = "/media/OldBrokenLighting.png" alt = "Old Broken lighting screenshot" class = "gameDescriptionImage"  style = "width: 40%; float: left; margin-right: 1vw;">  
             As I implemented this lighting system, it appeared to work well and even successfully lit some scenes. However, I soon encountered a critical 
@@ -120,14 +119,11 @@
           <h2>Semester 2: A New Lighting Solution and Polish</h2>
           <p>
             <br /> 
-            As the second semester began my focus was set on reworking the lighting system, since its functionality was required for the success of <span class = "italics">KnightLight</span>. 
-            After that hurdle I moved to smaller more scattered tasks, like optimizing performance, bug fixing and improving the usability of my systems for designers.<br /> 
-            <br /> 
-            <span class = "bold">Lighting System Implementation Success:</span> To start off this semester, I took a new approach to this problem: designing a lighting system from scratch. 
+            To start off this semester, I took a new approach to this problem: designing a lighting system from scratch. 
             This way the result could perfectly fit our needs, visually and technologically.<br /> 
             <br /> 
-            To start I consulted a graphics professor available to me at DigiPen and with their help I came up with my own method. This system worked by shooting rays into the 
-            game world in a compute shader, which could "pierce" as deeply as needed while fading to create the desired lighting effect. This method addressed the limitations of the 
+            To start I consulted a graphics professor available to me at DigiPen and with their help I came up with my own method. This system worked by shooting "rays" into the 
+            game world via a compute shader, which could "pierce" as deeply as needed while fading to create the desired lighting effect. This method addressed the limitations of the 
             previous algorithm, producing the visual results we wanted consistently.<br /> 
             <br /> 
             <img src = "/media/FinalLighting.png" alt = "Lighting screenshot" class = "gameDescriptionImage"  style = "width: 40%; float: left; margin-right: 1vw;">  
@@ -140,10 +136,10 @@
             to pivot, I was able to create a system that not only met but exceeded our original expectations.<br /> 
             <br /> 
             <img src = "/media/CameraShowcase.gif" alt = "Camera movement gif" class = "gameDescriptionImage"  style = "width: 50%; float: right; margin-left: 1vw;">  
-            <span class = "bold">Camera Work:</span> During this semester I also spent some time adding functionality to my camera for our designers. I improved camera movement by introducing 
-            clamping and object-following behaviors, ensuring the camera stays within intended limits while dynamically tracking key elements in the scene. Additionally, I added camera 
-            shake functionality to add impactful feedback during key gameplay moments. These tools greatly helped designers create a smooth and polished visual experience for the player, 
-            allowing them to focus on crafting engaging gameplay without worrying about camera issues detracting from the experience.<br /> 
+            <span class = "bold">Camera Controller:</span> During this semester I also spent some time adding functionality to my camera for our designers. I improved camera movement by introducing 
+            clamping and object-following behaviors, making sure the camera stays within intended limits while tracking targets within the scene. Additionally, I added camera 
+            shake functionality to add additional feedback during gameplay. These tools helped designers create a smooth and polished visual experience for the player to enjoy.
+            <br /> 
             <br /> 
           </p>
           <hr>
@@ -152,8 +148,8 @@
           <h2>Reflection and Future Goals</h2>
           <p>
             <br /> 
-            This project has been a pivotal experience in my growth as a graphics programmer and was the project that pushed me towards this career path. I’m particularly proud of the dynamic 2D 
-            lighting system, which became a hallmark feature of <span class = "italics">KnightLight</span>. In addition to that the lighting's initial failure was an amazing learning experience, 
+            This project has been a great experience in my growth as a graphics programmer and was the project that pushed me towards this career path. I’m particularly proud of the custom 2D 
+            lighting system and its final visual look. In addition to that the lighting's initial failure was an amazing learning experience, 
             that made its final result all the more satisfying.  <br /> 
             <br /> 
             However, there are always areas I would have loved to improve if given more time: <br /> 
@@ -161,20 +157,19 @@
           </p>
           <ul>
             <li>
-              <span class = "boldmini">Maintainability:</span> Near the end of the project the team began a “crunch” to finish our goals in time. While this “crunch” was successful, my code quality suffered. What was written during 
-               this time would be very hard to work off of if we ever continued the project. <br /> 
+               Firstly was the pipeline's maintainability. Near the end of the project the team began a “crunch” to finish our goals in time.  While this “crunch” was 
+               successful, my code quality suffered. What was written during this time would be very hard to work off of if we ever continued the project. <br /> 
                <br /> 
             </li>
             <li>
-              <span class = "boldmini">Efficiency:</span> While I generally feel good about the level of optimization in this project, there are areas where improvements should have been made given more time. For instance, rendering to textures 
-              for the editor game screen is done poorly. However, since this feature was only used internally by the team within the editor, optimizing it was not a top priority. <br /> 
+              Secondly, while I generally feel good about the level of optimization in this project, there are areas where improvements should have been made given more time.
+              For instance, rendering to textures for the editor game screen is done poorly. However, since this feature was only used internally by the team within the editor, 
+              optimizing it was not a top priority. <br /> 
               <br /> 
             </li>
           </ul>
           <p>
-            While there are many more, those are the ones that stick out to me.
-            <br />
-           Overall, I’m excited to take on more challenging graphical systems and continue refining my skills! <br /> 
+           Overall, I’m excited to take on more graphical systems and continue refining my skills! <br /> 
             <br /> 
           </p>
           <hr>
