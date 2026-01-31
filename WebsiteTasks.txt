@@ -1,14 +1,15 @@
 Tasks--------------------------------------
 
--Credit 3D models in raytracer video description
-
 ---NEW HOME PAGE-----------------------------------------------------------------------------------------------------
+
+-Fix video spacing on thin widow/moblie
 -Make voiceover videos showing off junior/senior year work in showcase tab
 
 ---RESUME------------------------------------------------------------------------------------------------------------
+
 -Add finished raytracer to resume
--Gpu profile raytracer and add that to resume
 -Make resume more machine readable?
 
 ---WRITING-----------------------------------------------------------------------------------------------------------
+
 -Rewrite cover letter
