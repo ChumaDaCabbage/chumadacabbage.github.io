@@ -9,6 +9,7 @@ Tasks--------------------------------------
 
 -Add finished raytracer to resume
 -Make resume more machine readable?
+-Update resume everywere
 
 ---WRITING-----------------------------------------------------------------------------------------------------------
 
