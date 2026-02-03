@@ -1,10 +1,5 @@
 Tasks--------------------------------------
 
----NEW HOME PAGE-----------------------------------------------------------------------------------------------------
-
--Make voiceover videos showing off junior/senior year work in showcase tab
--Add last video to linkedin
-
 ---RESUME------------------------------------------------------------------------------------------------------------
 
 -Make resume more machine readable?
