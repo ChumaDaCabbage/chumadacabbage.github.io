@@ -9,6 +9,7 @@ body
   background-color: black;
   color: #222;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Container for all projects */
