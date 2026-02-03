@@ -52,7 +52,7 @@
   display: none;
 }
 
-@media (max-width: 600px)
+@media (max-width: 721px)
 {
   .header .title { display: none; }
   .header .smallTitle   { display: inline-flex; }
