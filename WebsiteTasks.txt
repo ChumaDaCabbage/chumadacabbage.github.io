@@ -1,11 +1,11 @@
 Tasks--------------------------------------
 
 -Make my linkedin background one of my renders
--update linkedin
 
 ---NEW HOME PAGE-----------------------------------------------------------------------------------------------------
 
 -Make voiceover videos showing off junior/senior year work in showcase tab
+-Add last video to linkedin
 
 ---RESUME------------------------------------------------------------------------------------------------------------
 
